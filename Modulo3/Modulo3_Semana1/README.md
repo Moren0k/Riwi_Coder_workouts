@@ -1,6 +1,6 @@
 # Creación de un Sistema Interactivo de Mensajes
 
-**Objetivo del **entrenamiento**
+**Objetivo del entrenamiento**
 Implementar un programa funcional en JavaScript que permita interactuar con el usuario, validando entradas y mostrando respuestas dinámicas a través del uso de funciones básicas del lenguaje.
 
 ## Desarrollo del entrenamiento
