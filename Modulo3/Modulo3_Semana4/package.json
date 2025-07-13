@@ -1,0 +1,15 @@
+{
+  "name": "modulo3_semana4",
+  "version": "1.0.0",
+  "description": "El objetivo de esta hoja de trabajo es construir una página web interactiva que te permitirá aplicar tus conocimientos sobre el DOM y las herramientas de almacenamiento en el navegador. Crearás un sistema que:",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
