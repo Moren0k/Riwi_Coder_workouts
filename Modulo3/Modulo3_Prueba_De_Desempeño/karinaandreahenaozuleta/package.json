@@ -1,0 +1,13 @@
+{
+  "name": "karinaandreahenaozuleta403",
+  "version": "1.0.0",
+  "description": "SPA de gestión de eventos - Módulo 3",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "Karina Andrea Henao Zuleta",
+  "license": "MIT"
+}
