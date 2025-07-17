@@ -16,3 +16,32 @@ Tu tarea es implementar las siguientes funcionalidades:
 4. Implementar un contador de interacciones del usuario utilizando Session Storage.
 5. Incluir un botón para limpiar los datos almacenados en el Local Storage
 
+---
+
+Funcionamiento del Código
+
+    Guardar datos en LocalStorage:
+
+        Los valores del formulario (nombre y edad) se guardan cuando se hace clic en "Guardar Datos".
+
+        Los datos se muestran en la página.
+
+    Mostrar los datos:
+
+        Al cargar la página o después de guardar, se muestra el nombre y la edad en un div.
+
+    Contador de interacciones:
+
+        Cada vez que se hace clic en un botón, se incrementa un contador en SessionStorage.
+
+    Limpiar datos:
+
+        Al hacer clic en "Limpiar Datos", se eliminan los datos de LocalStorage y se actualiza la página.
+
+Uso
+
+    Ingresa tu nombre y edad en el formulario.
+
+    Haz clic en "Guardar Datos" para almacenarlos.
+
+    Haz clic en "Limpiar Datos" para eliminar los datos.
