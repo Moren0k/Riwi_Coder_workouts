@@ -108,7 +108,7 @@ Diseñar y documentar un modelo de base de datos relacional que permita:
 
 ## 5. Diagrama Entidad-Relación (ER)
 
-![Diagrama M4S1](/docs/M4S1.drawio.png)
+![Diagrama M4S1](/Modulo4/Modulo4_Semana1/docs/M4S1.drawio.png)
 
 ---
 
@@ -130,7 +130,7 @@ Posteriormente, estas hojas se exportaron como imagen y se incluyen a continuaci
 
 ### 📊 Vista de datos de ejemplo (desde Google Sheets)
 
-![Datos de ejemplo](/docs/M4S1.excel.jpg)
+![Datos de ejemplo](/Modulo4/Modulo4_Semana1/docs/M4S1.excel.jpg)
 
 ## 7. Técnicas y Buenas Prácticas
 
