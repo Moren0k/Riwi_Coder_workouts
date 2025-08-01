@@ -1,7 +1,5 @@
 # Caso de Estudio: Sistema de Gestión de Citas Médicas
 
----
-
 ## 1. Introducción
 
 El Hospital **"Vida Sana"** enfrenta problemas en la gestión de sus citas médicas debido al uso actual de hojas de cálculo que provocan:
@@ -12,8 +10,6 @@ El Hospital **"Vida Sana"** enfrenta problemas en la gestión de sus citas médi
 
 Para mejorar la eficiencia y confiabilidad, se plantea desarrollar un sistema de base de datos que gestione la información de pacientes, médicos, citas y diagnósticos de manera integrada.
 
----
-
 ## 2. Objetivo
 
 Diseñar y documentar un modelo de base de datos relacional que permita:
@@ -23,7 +19,6 @@ Diseñar y documentar un modelo de base de datos relacional que permita:
 - Registrar diagnósticos asociados a cada cita.
 - Facilitar consultas y reportes para mejorar la atención médica.
 
----
 
 ## 3. Entidades y Atributos Principales Creados
 
