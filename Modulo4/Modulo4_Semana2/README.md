@@ -145,10 +145,6 @@ El sistema debe permitir:
 
 ---
 
-# Creacion con MySQL
-
----
-
 ## 6. Tablas y Tipos de Datos
 
 ### 6.1 Tabla: estudiantes
