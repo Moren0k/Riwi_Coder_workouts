@@ -1,5 +1,15 @@
 # Caso de Estudio: Sistema de Gestión Académica Universitaria
 
+## 📑 Índice
+
+- [⚙️ Descripción funcional](#3-descripción-funcional)
+- [🧱 Entidades y Atributos Principales](#5-entidades-y-atributos-principales-creados)
+- [🔗 Relaciones Clave y Cardinalidades](#4-relaciones-clave-y-cardinalidades)
+- [🖼️ Diagrama Entidad-Relación (ER)](#5-diagrama-entidad-relación-er)
+- [💾 Tablas y Tipos de Datos](#6-tablas-y-tipos-de-datos)
+- [📊 Consultas y Manipulación](#consultas-básicas-y-manipulación)
+- [🚀 Instrucciones para Ejecutar la Base de Datos](#1--requisitos-previos)
+
 ## 1. Introducción
 
 La universidad virtual **"Aprende Online"** enfrenta problemas en la gestión de su información académica debido al uso actual de hojas de cálculo en cada área académica, lo que provoca:
@@ -208,3 +218,61 @@ El sistema debe permitir:
 
 - id_departamento_academico: INT, PRIMARY KEY, AUTO_INCREMENT
 - departamento_academico: VARCHAR(100), NOT NULL
+
+---
+
+## Consultas básicas y manipulación
+
+![Consultas](/Modulo4/Modulo4_Semana2/docs/M4S2.png)
+
+**Consultas SQL realizadas:**
+
+- Listado de estudiantes y sus carreras.
+- Cursos y sus docentes responsables.
+- Calificaciones de estudiantes.
+- Cursos inscritos por un estudiante específico.
+- Total de estudiantes por carrera.
+- Promedio de calificaciones por curso.
+- Vista `vista_estudiantes_inscritos` que unifica información de inscripciones, cursos y estudiantes.
+
+---
+
+## 🚀 Instrucciones para Ejecutar la Base de Datos
+
+Sigue estos pasos para correr correctamente el archivo `M4S2.sql` en tu entorno local:
+
+---
+
+## 1. 🐘 Requisitos Previos
+
+- Tener **MySQL Server** instalado.
+- Tener acceso como usuario `root` o equivalente.
+- Tener el archivo `M4S2.sql` ubicado localmente.
+
+---
+
+## 2. 🧪 Ejecutar script SQL
+
+Abre la terminal, navega hasta la carpeta del archivo y ejecuta:
+
+```bash
+mysql -u root -p < M4S2.sql
+
+    Ingresa tu contraseña cuando se solicite.
+
+    Esto creará la base de datos universidad, todas sus tablas y relaciones.
+
+3. 🧩 Verifica en consola o cliente gráfico
+
+Puedes usar clientes como:
+
+    TablePlus (GUI recomendada)
+
+    MySQL Workbench
+
+    O comandos de terminal como:
+
+USE universidad;
+SHOW TABLES;
+SELECT * FROM estudiantes;
+```
