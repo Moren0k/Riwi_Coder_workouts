@@ -1,5 +1,7 @@
 # Problema que resolver: sistema de Gestión de Contenido para Plataforma de Streaming
 
+**StreamHub** enfrenta problemas por manejar su catálogo y actividad de usuarios con hojas de cálculo aisladas, generando datos inconsistentes y búsquedas lentas. Para solucionarlo, se implementará una base de datos NoSQL que registre *películas*, *series*, *usuarios*, *historiales*, *listas de reproducción* e *interacciones*. El objetivo es optimizar consultas, unificar la información y permitir personalización, recomendaciones y análisis del comportamiento de los usuarios.
+
 ---
 
 ## Identificamos las colecciones necesarias
