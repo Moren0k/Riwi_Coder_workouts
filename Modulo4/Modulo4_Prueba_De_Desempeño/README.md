@@ -33,6 +33,8 @@ Angel Daniel(DNI,DIRECCION, CELULAR, CORREO), tiene una Numero_Factura: FAC7068,
 
 ---
 
+
+
 En la carpeta del Backend instalamos:
 (express,mysql2,csv-parser,multer,cors,dotenv)
 
@@ -46,4 +48,8 @@ Cree un archivo `CreateDataBase.sql` donde tengo todos los comandos para la crea
 
 Cree un archivo `db.js` donde tengo la conección a mi base de datos MySQL (pd_jhos_agudelo_hopper).
 Cree un archivo `csvs.js` donde tengo todas las funciones para leer y subir los diferentes archivos .CSV.
-Cree un archivo `index.js` donde voy a tener los endpoints para enviar la data a mi base de datos.
+Cree un archivo `index.js` donde voy a tener los las rutas.
+
+En el Main creee toda la interactividad con la pagina HTML.
+
+![RELACION](./M4.drawio.png)

@@ -12,6 +12,12 @@
 
     <div>
         <button type="button" id="btnUploadC" class="btn btn-primary">Execute CSV Clients</button>
+
+        <div>
+            <input type="text" name="delete for ID" id="inpDeleteClient">
+            <button type="button" id="btnDeleteC" class="btn btn-primary">Delete Client For ID</button>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -38,7 +44,18 @@
             <th>paid_amount</th>
             <tbody id="tableInvoices"></tbody>
         </table>
-        
+    </div>
+
+    <div>
+        <button type="button" id="btnUploadT" class="btn btn-primary">Execute CSV Transanctions</button>
+        <table class="table">
+            <th>transaction_code</th>
+            <th>transaction_datetime</th>
+            <th>amount</th>
+            <th>status_id</th>
+            <th>type_id</th>
+            <tbody id="tableTransaction"></tbody>
+        </table>
     </div>
 
 </body>

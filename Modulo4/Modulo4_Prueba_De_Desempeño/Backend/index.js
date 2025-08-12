@@ -4,14 +4,16 @@ const db = require('./db');
 const cors = require('cors'); 
 const app = express();
 
+//Functions for upload .csv
 const { uploadClients } = require('./csvs');
 const { uploadInvoices } = require('./csvs');
+const { uploadtransaction } = require('./csvs');
 
-// Middleware para permitir CORS
 app.use(cors());
 app.use(bodyParser.json());
 
-//Insert New Client SUBIR DESDE POSTMAN!
+/* POST */
+//Insert New Client
 app.post('/NewClient', (req, res) => {
     const { name, lastname, identification, address, phone, email } = req.body;
 
@@ -27,8 +29,9 @@ app.post('/NewClient', (req, res) => {
     });
 });
 
+/* POST */
 //Insert DataCSV Clients
-app.post('/uploadCSV', (req,res) =>{
+app.post('/uploadDataClients', (req,res) =>{
     uploadClients();
     console.log("Funciono Clients");
     res.json({result:"Base de datos actualizada con datos CSV"});
@@ -41,6 +44,14 @@ app.post('/uploadDataInvoices', (req,res) =>{
     res.json({result:"Base de datos actualizada con datos CSV"});
 })
 
+//Insert DataCSV Transactions
+app.post('/uploadDataTransactions', (req,res) =>{
+    uploadtransaction();
+    console.log("Funciono Transactions")
+    res.json({result:"Base de datos actualizada con datos CSV"});
+})
+
+/* GET */
 // Obtener todos los clients
 app.get('/getClients', (req, res) => {
     const sql = 'SELECT * FROM clients';
@@ -67,7 +78,33 @@ app.get('/getInvoices', (req, res) => {
     });
 });
 
+// Obtener todos las Transactions
+app.get('/getTransactions', (req, res) => {
+    const sql = 'SELECT * FROM transactions';
 
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error('Error al obtener las Transactions:', err);
+            return res.status(500).json({ error: 'Error al obtener las Transactions' });
+        }
+        res.json(results);
+    })
+})
+
+/* DELETE */
+app.delete('/deleteClients/:id', (req, res) => {
+    const clientId = req.params.id;
+    const sql = 'DELETE FROM clients WHERE client_id = ?';
+
+    db.query(sql, [clientId], (err, results) => {
+        if (err) {
+            console.error('Error al eliminar el cliente:', err);
+            return res.status(500).json({ error: 'Error al eliminar el cliente' });
+        }
+        console.log("Cliente eliminado correctamente");
+        res.json({ message: 'Cliente eliminado correctamente', affectedRows: results.affectedRows });
+    });
+});
 
 //Conectarme
 app.listen(3000, () => {

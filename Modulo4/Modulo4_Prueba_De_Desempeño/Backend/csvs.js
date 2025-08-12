@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
 const connection = require('./db');
+const { on } = require('events');
 
-const uploadClients = () => {
+const uploadClients = () => { //Funciton upload clients.csv
     const result = [];
     const filePath = path.join(__dirname, './CSV/clients.csv');
 
@@ -37,7 +38,7 @@ const uploadClients = () => {
         });
 };
 
-const uploadInvoices = () => {
+const uploadInvoices = () => { //Function upload invoices.csv
     const result = [];
     const filePath = path.join(__dirname, './CSV/invoices.csv');
 
@@ -70,4 +71,36 @@ const uploadInvoices = () => {
         });
 };
 
-module.exports = { uploadClients, uploadInvoices };
+const uploadtransaction = () => { //Function upload transaction.CSV
+    const result = [];
+    const filePath = path.join(__dirname, './CSV/transactions.csv');
+
+    fs.createReadStream(filePath)
+    .pipe(csv())
+    .on('data', (row) => {
+        result.push(row);
+    })
+    .on('end', () => {
+        result.forEach((transaction) => {
+            const query = `INSERT INTO transactions (transaction_code,transaction_datetime,amount,status_id,type_id)
+            VALUES (?, ?, ?, ?, ?)`;
+
+            const values = [
+                transaction.status_id,
+                transaction.transaction_code,
+                transaction.transaction_datetime,
+                transaction.amount,
+                transaction.type_id
+            ];
+
+            connection.query(query, values, (err, result) => {
+                if (err) {
+                    console.log("Error al insertar transacciones", err);
+                } else {
+                    console.log(`Transaction agregado correctamente: ${result.insertId}`);
+                }
+            });
+        });
+    });
+};
+module.exports = { uploadClients, uploadInvoices, uploadtransaction};
