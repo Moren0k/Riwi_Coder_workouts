@@ -143,7 +143,17 @@ function uploadDataT(){
     .then(cargarTransacciones())
 };
 
-function 
+function deleteDataC(){
+    fetch('http://localhost:3000/deleteClients/:id', {
+    method: 'DELETE',
+    headers: {'Content-Type':'application/json'}
+    })
+    .then(res => {
+        res.json()
+        cargarTransacciones();
+    })
+    .then(cargarTransacciones())
+}
 
 cargarEmpleados();
 cargarFacturas();
