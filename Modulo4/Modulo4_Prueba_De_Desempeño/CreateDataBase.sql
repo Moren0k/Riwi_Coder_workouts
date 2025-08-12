@@ -10,7 +10,8 @@ USE pd_jhos_agudelo_hopper;
 CREATE TABLE clients (
     client_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    dni VARCHAR(20) UNIQUE NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    identification VARCHAR(20) UNIQUE NOT NULL,
     address VARCHAR(255),
     phone VARCHAR(20),
     email VARCHAR(100)

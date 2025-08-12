@@ -1,8 +1,16 @@
 const tableClients = document.getElementById('tableClients');
-const btnUploadCSV = document.getElementById('btnUploadCSV');
+const btnUploadC = document.getElementById('btnUploadC');
 
-btnUploadCSV.addEventListener('click', ()=>{
-    uploadData();
+const tableInvoices = document.getElementById('tableInvoices');
+const btnUploadI = document.getElementById('btnUploadI');
+
+
+btnUploadC.addEventListener('click', ()=>{
+    uploadDataC();
+});
+
+btnUploadI.addEventListener('click', ()=>{
+    uploadDataI();
 });
 
 //function encargada de traer mis empleados
@@ -25,14 +33,49 @@ function cargarEmpleados(){
             `;
         });
     });
+};
+
+function cargarFacturas(){
+    fetch('http://localhost:3000/getInvoices')
+    .then(res => res.json())
+    .then(data => {
+        tableInvoices.innerHTML = '';
+        data.forEach(rec => {
+            tableInvoices.innerHTML += `
+            <tr>
+                <td>${rec.invoice_id}</td>
+                <td>${rec.client_id}</td>
+                <td>${rec.invoice_number}</td>
+                <td>${rec.billing_period}</td>
+                <td>${rec.billed_amount}</td>
+                <td>${rec.paid_amount}</td>
+            </tr>
+            `;
+        });
+    });
 }
 
-function uploadData(){
+function uploadDataC(){
     fetch('http://localhost:3000/uploadCSV', {
         method: 'POST',
         headers: {'Content-Type':'application/json'}
     })
-    .then(res => res.json());
+    .then(res => {
+        res.json()
+        cargarEmpleados();
+    });
+};
+
+function uploadDataI(){
+    fetch('http://localhost:3000/uploadDataInvoices', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'}
+    })
+    .then(res => {
+        res.json()
+        cargarFacturas();
+    });
 }
 
 cargarEmpleados();
+cargarFacturas();

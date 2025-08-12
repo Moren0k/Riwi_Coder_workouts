@@ -8,17 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="./main.js" defer></script>
 </head>
-<body class="p-4">
+<body class="container p-4">
 
     <div>
-        <button type="button" id="btnUploadCSV" class="btn btn-primary">Execute CSV</button>
+        <button type="button" id="btnUploadC" class="btn btn-primary">Execute CSV Clients</button>
         <table class="table">
             <thead>
                 <tr>
                     <th>client_id</th>
                     <th>name</th>
                     <th>lastname</th>
-                    <th>second_lastname</th>
                     <th>identification</th>
                     <th>address</th>
                     <th>phone</th>
@@ -27,6 +26,19 @@
             </thead>
             <tbody id="tableClients"></tbody>
         </table>
+    </div>
+
+    <div>
+        <button type="button" id="btnUploadI" class="btn btn-primary">Execute CSV Invoices</button>
+        <table class="table">
+            <th>invoice_id</th>
+            <th>invoice_number</th>
+            <th>billing_period</th>
+            <th>billed_amount</th>
+            <th>paid_amount</th>
+            <tbody id="tableInvoices"></tbody>
+        </table>
+        
     </div>
 
 </body>
