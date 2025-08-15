@@ -1,112 +1,113 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./db');
 const cors = require('cors'); 
 const app = express();
-
-//Functions for upload .csv
-const { uploadClients } = require('./csvs');
-const { uploadInvoices } = require('./csvs');
-const { uploadtransaction } = require('./csvs');
-
+const db = require('./db'); //DataBase Connection
 app.use(cors());
 app.use(bodyParser.json());
 
-/* POST */
+//Functions for upload .csv
+const {uploadClients} = require('./csvs');
+const {uploadInvoices} = require('./csvs');
+const {uploadTransactions} = require('./csvs');
+
+/* POSTs */
 //Insert New Client
-app.post('/NewClient', (req, res) => {
-    const { name, lastname, identification, address, phone, email } = req.body;
+app.post('/addClient', (req, res) => {
+    const {name, lastname, identification, address, phone, email} = req.body;
 
-    const sql = `INSERT INTO clients (name, lastname, identification, address, phone, email)
-    VALUES(?, ?, ?, ?, ?, ?)`;
+    const query = `INSERT INTO clients (name, lastname, identification, address, phone, email)
+        VALUES (?, ?, ?, ?, ?, ?)`;
 
-    db.query(sql, [name, lastname, identification, address, phone, email], (err, result) => {
+    db.query(query, [name, lastname, identification, address, phone, email], (err, result) => {
         if (err) {
-            console.error('Error al insertar client:', err);
-            return res.status(500).json({ error: 'Error al insertar client' });
+            console.error("Error al insertar un cliente", err);
+            return res.json({error: "Error al insertar un cliente"});
         }
-        res.status(201).json({ message: 'Client insertado correctamente', id: result.insertId });
+        res.json({message: "Client insertado correctamente", id: result.insertId});
     });
 });
 
-/* POST */
 //Insert DataCSV Clients
-app.post('/uploadDataClients', (req,res) =>{
+app.post('/uploadClients', (req,res) => {
     uploadClients();
-    console.log("Funciono Clients");
-    res.json({result:"Base de datos actualizada con datos CSV"});
+    res.json({result:"Base de datos (C) actualizada correctamente con datos CSV"});
 });
 
 //Insert DataCSV Invoices
-app.post('/uploadDataInvoices', (req,res) =>{
+app.post('/uploadInvoices', (req,res) => {
     uploadInvoices();
-    console.log("Funciono Invoices")
-    res.json({result:"Base de datos actualizada con datos CSV"});
+    res.json({result:"Base de datos (I) actualizada correctamente con datos CSV"});
 })
 
 //Insert DataCSV Transactions
-app.post('/uploadDataTransactions', (req,res) =>{
-    uploadtransaction();
-    console.log("Funciono Transactions")
-    res.json({result:"Base de datos actualizada con datos CSV"});
+app.post('/uploadTransactions', (req,res) => {
+    uploadTransactions();
+    res.json({result:"Base de datos (T) actualizada correctamente con datos CSV"});
 })
 
-/* GET */
-// Obtener todos los clients
+/* GETs */
+//Get all data from table clients
 app.get('/getClients', (req, res) => {
-    const sql = 'SELECT * FROM clients';
+    const query = 'SELECT * FROM clients';
 
-    db.query(sql, (err, results) => {
+    db.query(query, (err, result) => {
         if (err) {
-            console.error('Error al obtener los clients:', err);
-            return res.status(500).json({ error: 'Error al obtener los clients' });
+            console.error("Error al obtener los clientes.", err);
+            return res.json({error: "Error al obtener los clientes."});
         }
-        res.json(results);
+        res.json(result);
     });
 });
 
-// Obtener todos los invoices
+//Get all data from table invoices
 app.get('/getInvoices', (req, res) => {
-    const sql = 'SELECT * FROM invoices';
+    const query = 'SELECT * FROM invoices';
 
-    db.query(sql, (err, results) => {
+    db.query(query, (err, result) => {
         if (err) {
-            console.error('Error al obtener los invoices:', err);
-            return res.status(500).json({ error: 'Error al obtener los invoices' });
+            console.error("Error al obtener las facturas.", err);
+            return res.json({error: "Error al obtener las facturas."});
         }
-        res.json(results);
+        res.json(result);
     });
 });
 
-// Obtener todos las Transactions
+//Get all data from table transactions
 app.get('/getTransactions', (req, res) => {
-    const sql = 'SELECT * FROM transactions';
+    const query = 'SELECT * FROM transactions';
 
-    db.query(sql, (err, results) => {
+    db.query(query, (err, result) => {
         if (err) {
-            console.error('Error al obtener las Transactions:', err);
-            return res.status(500).json({ error: 'Error al obtener las Transactions' });
+            console.error("Error al obtener las transacciones.", err);
+            return res.json({error: "Error al obtener las transacciones."});
         }
-        res.json(results);
-    })
-})
-
-/* DELETE */
-app.delete('/deleteClients/:id', (req, res) => {
-    const clientId = req.params.id;
-    const sql = 'DELETE FROM clients WHERE client_id = ?';
-
-    db.query(sql, [clientId], (err, results) => {
-        if (err) {
-            console.error('Error al eliminar el cliente:', err);
-            return res.status(500).json({ error: 'Error al eliminar el cliente' });
-        }
-        console.log("Cliente eliminado correctamente");
-        res.json({ message: 'Cliente eliminado correctamente', affectedRows: results.affectedRows });
+        res.json(result);
     });
 });
 
-//Conectarme
+/* DELETEs */
+app.delete('/delClient/:id', (req, res) => {
+    const clientID = req.params.id;
+    const query = `DELETE FROM clients WHERE client_id = ?`;
+
+    db.query(query, [clientID], (err, result) => {
+        if (err) {
+            console.error("Error al eliminar el cliente.", err);
+            return res.json({error: "Error al eliminar el cliente"});
+        }
+        res.json({message: "Cliente eliminado correctamente", affectedRows: result.affectedRows });
+    });
+});
+
+app.delete('/delAll', (req, res) => {
+    db.query('TRUNCATE TABLE transactions');
+    db.query('TRUNCATE TABLE invoices');
+    db.query('TRUNCATE TABLE clients');
+    res.send('Todas los datos de las tablas fueron eliminadas correctamente.');
+});
+
+//Connect to localhost
 app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000');
 });

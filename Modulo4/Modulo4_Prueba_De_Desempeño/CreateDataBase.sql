@@ -26,9 +26,8 @@ CREATE TABLE invoices (
     invoice_number VARCHAR(20) UNIQUE NOT NULL,
     billing_period CHAR(7) NOT NULL, -- Format YYYY-MM
     billed_amount DECIMAL(12,2) NOT NULL DEFAULT 0,
-    paid_amount DECIMAL(12,2) NOT NULL DEFAULT 0,
-    FOREIGN KEY (client_id) REFERENCES clients(client_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
+    paid_amount DECIMAL(12,2) NOT NULL DEFAULT 0
+    -- FOREIGN KEY removed
 );
 
 -- =======================
@@ -66,13 +65,27 @@ CREATE TABLE transactions (
     platform_id INT NOT NULL,
     transaction_code VARCHAR(20) UNIQUE NOT NULL,
     transaction_datetime DATETIME NOT NULL,
-    amount DECIMAL(12,2) NOT NULL,
-    FOREIGN KEY (invoice_id) REFERENCES invoices(invoice_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (status_id) REFERENCES status(status_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (type_id) REFERENCES types(type_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (platform_id) REFERENCES platforms(platform_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
+    amount DECIMAL(12,2) NOT NULL
+    -- FOREIGN KEYs removed
 );
+
+-- =======================
+-- INSERT DATA INTO status
+-- =======================
+INSERT INTO status (status_name) VALUES
+('Pendiente'),
+('Completado'),
+('Fallido');
+
+-- =======================
+-- INSERT DATA INTO types
+-- =======================
+INSERT INTO types (type_name) VALUES
+('Pago de factura');
+
+-- =======================
+-- INSERT DATA INTO platforms
+-- =======================
+INSERT INTO platforms (platform_name) VALUES
+('Nequi'),
+('Daviplata');
