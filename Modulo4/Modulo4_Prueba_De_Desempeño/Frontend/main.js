@@ -14,6 +14,10 @@ const btnUploadT = document.getElementById('btnUploadT');
 //Delete All Data
 const btnDeleteA = document.getElementById('btnDeleteA');
 
+//Delete Client For Id
+const inpIdDelete = document.getElementById('idDelete').value;
+const btnIdDelete = document.getElementById('btnIdDelete');
+
 /* EVENTS */
 btnUploadC.addEventListener('click', ()=> { //Clients
     uploadDataC();
@@ -29,6 +33,10 @@ btnUploadT.addEventListener('click', ()=> { //Transactions
 
 btnDeleteA.addEventListener('click', ()=> { //Delete All Data
     deleteAllD();
+});
+
+btnIdDelete.addEventListener('click', ()=> { //Delete Client For ID
+
 });
 
 /* GET */
@@ -130,6 +138,14 @@ function deleteAllD() {
     .then(() => getClients())
     .then(() => getInvoices())
     .then(() => getTransaction())
+};
+
+function deleteForIdC() {
+    fetch(`http://localhost:3000/delClient/:id`,{
+        method: 'DELETE',
+        headers: {'Content-Type':'application/json'}
+    })
+
 };
 
 //Load tables init website

@@ -13,8 +13,14 @@
 
     <button type="button" id="btnDeleteA" class="btn btn-danger">Delete All Data</button>
 
-    <div class="container" style="border: 2px solid black;"> <!-- Clients -->
+    <div class="container"> <!-- Clients -->
         <button type="button" id="btnUploadC" class="btn btn-primary">Execute CSV Clients</button>
+
+        <div class="container m-2"> <!-- Delete Client For ID-->
+            <input type="number" placeholder="Ingrese un ID" id="idDelete">
+            <button type="button" id="btnIdDelete" class="btn btn-danger">Delete ID</button>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -31,7 +37,7 @@
         </table>
     </div>
 
-    <div class="container" style="border: 2px solid black;"> <!-- Invoices -->
+    <div class="container"> <!-- Invoices -->
         <button type="button" id="btnUploadI" class="btn btn-primary">Execute CSV Invoices</button>
         <table class="table">
             <thead>
@@ -48,7 +54,7 @@
         </table>
     </div>
 
-    <div class="container" style="border: 2px solid black;"> <!-- Tramsactions -->
+    <div class="container"> <!-- Tramsactions -->
         <button type="button" id="btnUploadT" class="btn btn-primary">Execute CSV Transanctions</button>
         <table class="table">
             <thead>
