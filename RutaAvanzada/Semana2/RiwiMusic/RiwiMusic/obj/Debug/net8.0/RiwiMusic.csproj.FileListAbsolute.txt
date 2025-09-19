@@ -1,0 +1,14 @@
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/bin/Debug/net8.0/RiwiMusic
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/bin/Debug/net8.0/RiwiMusic.deps.json
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/bin/Debug/net8.0/RiwiMusic.runtimeconfig.json
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/bin/Debug/net8.0/RiwiMusic.dll
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/bin/Debug/net8.0/RiwiMusic.pdb
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.GeneratedMSBuildEditorConfig.editorconfig
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.AssemblyInfoInputs.cache
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.AssemblyInfo.cs
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.csproj.CoreCompileInputs.cache
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.dll
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/refint/RiwiMusic.dll
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.pdb
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/RiwiMusic.genruntimeconfig.cache
+/home/kevinmorenocsharp/Documentos/RiwiMusic/RiwiMusic/obj/Debug/net8.0/ref/RiwiMusic.dll
