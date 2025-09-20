@@ -1,8 +1,9 @@
 namespace RiwiMusic.Models;
 public class User
-{
-    // User : UserName UserPassword UserStatus
-    public string? UserName { get; init; }
-    public string? UserPassword { get; init; }
+{// User : UserId UserName UserPassword UserEmail UserStatus
+    public int UserId { get; init; }
+    public string? UserName { get; set; }
+    public string? UserPassword { get; set; }
+    public string? UserEmail { get; set; }
     public bool UserStatus { get; set; }
 }

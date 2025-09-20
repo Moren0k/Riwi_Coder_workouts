@@ -1,42 +1,45 @@
-using System.Runtime.InteropServices.JavaScript;
-
 namespace RiwiMusic;
-public class Admin
+public static class Admin
 {
     public static void Menu()
     {
-        int option = Convert.ToInt32(Console.ReadLine());
+        bool menu = true;
         do
         {
-            Console.WriteLine("\n===== Menú Principal =====");
-            Console.WriteLine("1. Gestión de Clientes");
+            Console.WriteLine("\n===== Menú Administrador =====");
+            Console.WriteLine("1. Gestión de Usuarios");
             Console.WriteLine("2. Gestión de Conciertos");
             Console.WriteLine("3. Gestión de Tiquetes");
             Console.WriteLine("4. Consultas");
-            Console.WriteLine("0. Salir");
+            Console.WriteLine("0. Cerrar Sesion ");
+            
             Console.Write("Seleccione una opción: ");
+            int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
             {
                 case 1:
-                    Console.WriteLine("Gestión de Conciertos...");
+                    Console.WriteLine("Gestion de Usuarios");
+                    Manage.ManageClients.ManageClientsMenu();
                     break;
                 case 2:
-                    Console.WriteLine("Gestión de Clientes...");
+                    Console.WriteLine("Gestion de Conciertos");
                     break;
                 case 3:
-                    Console.WriteLine("Gestión de Tiquetes...");
+                    Console.WriteLine("Gestion de Tiquetes");
                     break;
                 case 4:
-                    Console.WriteLine("Consultas...");
+                    Console.WriteLine("Consultas");
                     break;
                 case 0:
-                    Console.WriteLine("Saliendo del sistema...");
+                    Console.WriteLine("Cerrar Sesion");
+                    Login.Menu();
+                    menu = false;
                     break;
                 default:
-                    Console.WriteLine("Opción inválida, intente de nuevo.");
+                    Console.WriteLine("Opcion no valida");
                     break;
             }
-        } while (option == 0);
+        } while (menu);
     }
 }

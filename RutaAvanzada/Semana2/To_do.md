@@ -80,8 +80,8 @@
 
 ## 8. UML y Documentación
 
-- [ ] Crear **Diagrama de Clases**.
-- [ ] Crear **Diagrama de Casos de Uso**.
+- [x] Crear **Diagrama de Clases**.
+- [x] Crear **Diagrama de Casos de Uso**.
 - [ ] Redactar justificación de cómo se aplicó POO.
 
 ---

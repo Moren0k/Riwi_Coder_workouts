@@ -4,8 +4,7 @@
     {
         static void Main()
         {
-            MainMenu.Menu();
+            Login.Menu(); //Login for start program
         }
     }
-};
-
+}
