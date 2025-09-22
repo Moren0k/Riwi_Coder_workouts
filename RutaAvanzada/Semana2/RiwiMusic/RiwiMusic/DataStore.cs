@@ -3,10 +3,10 @@ namespace RiwiMusic;
 public static class DataStore
 {           
     public static int IdCounterU = 3;
-    public static List<User> Users = new List<User>
+    public static List<Models.User> Users = new List<Models.User>
     {// User : UserId UserName UserPassword UserEmail UserStatus
-        new User {UserId = 1, UserName = "admin", UserPassword = "123", UserEmail = "admin@gmail.com", UserStatus = true},
-        new User {UserId = 2, UserName = "kevin", UserPassword = "321", UserEmail = "kevin@gmail.com", UserStatus = false},
+        new Models.User {UserId = 1, UserName = "admin", UserPassword = "123", UserEmail = "admin@gmail.com", UserStatus = true},
+        new Models.User {UserId = 2, UserName = "kevin", UserPassword = "321", UserEmail = "kevin@gmail.com", UserStatus = false},
     };
     public static int IdCounterC = 3;
     public static List<Concert> Concerts = new List<Concert>

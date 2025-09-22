@@ -1,12 +1,12 @@
 namespace RiwiMusic;
-public static class Client
+public static class User
 {
     public static void Menu()
     {
         bool menu = true;
         do
         {
-            Console.WriteLine("\n===== Menú Cliente =====");
+            Console.WriteLine("\n===== Menú Usuario =====");
             Console.WriteLine("1. Ver Conciertos");
             Console.WriteLine("2. Comprar Tickets");
             Console.WriteLine("0. Cerrar Sesion");
@@ -47,5 +47,10 @@ public static class Client
     private static void BuyTicket()
     {
         //Logic buy tickets
+        foreach (var concert in  DataStore.Concerts)
+        {
+            Console.WriteLine(@$"[{concert.ConcertId}] | Nombre: {concert.ConcertName}, Lugar: {concert.ConcertCity}
+            Fecha: {concert.ConcertDate}, Precio: {concert.ConcertPrice} C/u");
+        }
     }
 }

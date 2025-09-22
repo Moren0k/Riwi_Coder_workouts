@@ -65,7 +65,7 @@ public static class ManageUsers
     }
     private static void AddUser(string name, string email, string password, bool status)
     {
-        var newUser = new User()
+        var newUser = new Models.User()
         {
             UserId = DataStore.IdCounterU++,
             UserName = name,

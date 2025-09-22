@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RiwiMusic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdec53375bcbccf54a7f9af6c39a79fe434348c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76a112ea925e6f9493088656274069e9b56491c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("RiwiMusic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RiwiMusic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

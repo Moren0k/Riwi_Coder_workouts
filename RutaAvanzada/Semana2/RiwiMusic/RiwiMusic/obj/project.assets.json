@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/kevin-moreno/.nuget/packages/": {}
+    "/home/kevinmorenocsharp/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
+      "projectUniqueName": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
       "projectName": "RiwiMusic",
-      "projectPath": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
-      "packagesPath": "/home/kevin-moreno/.nuget/packages/",
-      "outputPath": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/obj/",
+      "projectPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
+      "packagesPath": "/home/kevinmorenocsharp/.nuget/packages/",
+      "outputPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/kevin-moreno/.nuget/NuGet/NuGet.Config"
+        "/home/kevinmorenocsharp/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

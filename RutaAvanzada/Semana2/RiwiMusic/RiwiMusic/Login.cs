@@ -21,8 +21,8 @@ public static class Login
         }
         else
         {
-            Console.WriteLine("Eres un Cliente");
-            Client.Menu();
+            Console.WriteLine("Eres un Usuario");
+            User.Menu();
         }
     }
 }
