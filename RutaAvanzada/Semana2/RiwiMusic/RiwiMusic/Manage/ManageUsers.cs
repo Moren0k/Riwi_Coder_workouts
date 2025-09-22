@@ -1,8 +1,8 @@
 using RiwiMusic.Models;
 namespace RiwiMusic.Manage;
-public static class ManageClients
+public static class ManageUsers
 {
-    public static void ManageClientsMenu()
+    public static void ManageUsersMenu()
     {
         bool menu = true;
         do
@@ -67,7 +67,7 @@ public static class ManageClients
     {
         var newUser = new User()
         {
-            UserId = DataStore.IdCounter++,
+            UserId = DataStore.IdCounterU++,
             UserName = name,
             UserPassword = password,
             UserEmail = email,
@@ -83,7 +83,7 @@ public static class ManageClients
         
         var user = DataStore.Users.FirstOrDefault(user => user.UserId == idEdit);
         if (user != null)
-        {   //Get New Data
+        {   //Get new data to Update user
             Console.Write("Nuevo nombre: ");
             user.UserName = Console.ReadLine()!;
 

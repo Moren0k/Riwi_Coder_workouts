@@ -20,13 +20,15 @@ public static class Admin
             {
                 case 1:
                     Console.WriteLine("Gestion de Usuarios");
-                    Manage.ManageClients.ManageClientsMenu();
+                    Manage.ManageUsers.ManageUsersMenu();
                     break;
                 case 2:
                     Console.WriteLine("Gestion de Conciertos");
+                    Manage.ManageConcerts.ManageConcertsMenu();
                     break;
                 case 3:
                     Console.WriteLine("Gestion de Tiquetes");
+                    Manage.ManageTickets.ManageTicketsMenu();
                     break;
                 case 4:
                     Console.WriteLine("Consultas");

@@ -34,19 +34,19 @@
 
 ## 3. Gestión de Conciertos
 
-- [ ] Implementar **Registrar concierto**.
-- [ ] Implementar **Listar conciertos**.
-- [ ] Implementar **Editar concierto**.
-- [ ] Implementar **Eliminar concierto**.
+- [x] Implementar **Registrar concierto**.
+- [x] Implementar **Listar conciertos**.
+- [x] Implementar **Editar concierto**.
+- [x] Implementar **Eliminar concierto**.
 
 ---
 
 ## 4. Gestión de Clientes
 
-- [ ] Implementar **Registrar cliente**.
-- [ ] Implementar **Listar clientes**.
-- [ ] Implementar **Editar cliente**.
-- [ ] Implementar **Eliminar cliente**.
+- [x] Implementar **Registrar cliente**.
+- [x] Implementar **Listar clientes**.
+- [x] Implementar **Editar cliente**.
+- [x] Implementar **Eliminar cliente**.
 
 ---
 
@@ -56,9 +56,9 @@
   - [ ] Validar cliente existente.
   - [ ] Validar concierto existente.
   - [ ] Calcular total.
-- [ ] Implementar **Listar tiquetes vendidos**.
-- [ ] Implementar **Editar compra**.
-- [ ] Implementar **Eliminar compra**.
+- [x] Implementar **Listar tiquetes vendidos**.
+- [x] Implementar **Editar compra**.
+- [x] Implementar **Eliminar compra**.
 
 ---
 
