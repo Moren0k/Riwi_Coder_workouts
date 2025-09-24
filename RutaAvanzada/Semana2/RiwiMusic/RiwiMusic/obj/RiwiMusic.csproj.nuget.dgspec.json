@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj": {}
+    "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj": {}
   },
   "projects": {
-    "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj": {
+    "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
+        "projectUniqueName": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
         "projectName": "RiwiMusic",
-        "projectPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
+        "projectPath": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/RiwiMusic.csproj",
         "packagesPath": "/home/kevinmorenocsharp/.nuget/packages/",
-        "outputPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/obj/",
+        "outputPath": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana2/RiwiMusic/RiwiMusic/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/kevinmorenocsharp/.nuget/NuGet/NuGet.Config"

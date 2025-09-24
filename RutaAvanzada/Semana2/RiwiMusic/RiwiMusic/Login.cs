@@ -1,6 +1,7 @@
 namespace RiwiMusic;
 public static class Login
 {
+    public static int LoggedUserId { get; private set; }
     public static void Menu()
     {   //Get userName, userPassword 
         Console.WriteLine("===== | Bienvenido a RiwiMusic | =====");
@@ -11,7 +12,7 @@ public static class Login
         
         VerifyLogin(userName, userPassword); //Send data to VerifyLogin
     }
-    public static void VerifyLogin(string? userName, string? userPassword)
+    private static void VerifyLogin(string? userName, string? userPassword)
     {
         var user = DataStore.Users.FirstOrDefault(user => userName == user.UserName && userPassword == user.UserPassword);
         if (user!.UserStatus)
@@ -22,6 +23,7 @@ public static class Login
         else
         {
             Console.WriteLine("Eres un Usuario");
+            LoggedUserId = user.UserId;
             User.Menu();
         }
     }

@@ -1,4 +1,3 @@
-using RiwiMusic.Models;
 namespace RiwiMusic.Manage;
 public static class ManageUsers
 {

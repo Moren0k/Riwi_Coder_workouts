@@ -96,7 +96,7 @@ public static class ManageConcerts
             Console.Write("Nueva fecha: ");
             concert.ConcertDate = DateTime.Parse(Console.ReadLine()!);
 
-            Console.Write("NUevo precio: ");
+            Console.Write("Nuevo precio: ");
             concert.ConcertPrice = double.Parse(Console.ReadLine()!);
 
             Console.WriteLine("Concierto actualizado.");
