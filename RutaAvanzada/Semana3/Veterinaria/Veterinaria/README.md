@@ -1,52 +1,55 @@
-# Configuración de Entity Framework Core con MySQL en el proyecto **Veterinaria**
+# Documentación del proyecto Veterinaria
 
-Este proyecto utiliza **Entity Framework Core** con **MySQL** mediante el proveedor Pomelo. A continuación se documentan los paquetes instalados, sus versiones y los comandos principales.
+## Configuración de Entity Framework Core con MySQL
 
-## Paquetes instalados
+Este proyecto utiliza **Entity Framework Core** con **MySQL** mediante el proveedor Pomelo. La siguiente documentación incluye los paquetes exactos que se deben instalar y los comandos necesarios para iniciar el proyecto.
 
-- `Pomelo.EntityFrameworkCore.MySql` → Proveedor de EF Core para MySQL/MariaDB.  
-  Versión recomendada: **9.0.0**
+## Paquetes instalados y versiones exactas
+
+* `Pomelo.EntityFrameworkCore.MySql` → Proveedor de EF Core para MySQL/MariaDB.
+  Versión: **9.0.0**
 
   ```bash
-  dotnet add package Pomelo.EntityFrameworkCore.MySql
+  dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
   ```
 
-- `Microsoft.EntityFrameworkCore.Tools` → Herramientas de consola para migraciones y actualización de base de datos.  
-  Versión recomendada: **9.0.9**
-  
+* `Microsoft.EntityFrameworkCore.Tools` → Herramientas de consola para migraciones y actualización de base de datos.
+  Versión: **9.0.9**
+
   ```bash
-  dotnet add package Microsoft.EntityFrameworkCore.Tools
+  dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.9
   ```
 
-- `Microsoft.EntityFrameworkCore.Design` → Necesario para scaffolding y generación de migraciones.  
-  Versión recomendada: **9.0.9**
+* `Microsoft.EntityFrameworkCore.Design` → Necesario para scaffolding y generación de migraciones.
+  Versión: **9.0.9**
 
   ```bash
-  dotnet add package Microsoft.EntityFrameworkCore.Design
+  dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.9
   ```
 
 ## Comandos útiles
 
-- Crear una migración inicial:
+* Crear una migración inicial:
 
 ```bash
   dotnet ef migrations add InitialCreate
 ```
 
-- Aplicar migraciones a la base de datos:
+* Aplicar migraciones a la base de datos:
 
 ```bash
   dotnet ef database update
 ```
 
-- Verificar paquetes instalados:
+* Verificar paquetes instalados:
 
 ```bash
   dotnet list package
 ```
 
-## Notas
+## Notas importantes
 
-- Los paquetes se instalan en el proyecto `Veterinaria/Veterinaria.csproj`.  
-- Se recomienda mantener este README.md en la raíz del proyecto para referencia rápida.  
-- Las versiones indicadas son las más recientes y compatibles con .NET 8.0 al momento de documentar.
+* Los paquetes deben instalarse en el proyecto `Veterinaria/Veterinaria.csproj`.
+* Mantener este README.md en la raíz del proyecto para referencia rápida.
+* Se recomienda usar exactamente las versiones indicadas para evitar conflictos de compatibilidad.
+* Se asume que se tiene un usuario en MySQL configurado (por ejemplo, `userv` con contraseña `123`) con permisos completos sobre la base de datos que será creada por las migraciones.

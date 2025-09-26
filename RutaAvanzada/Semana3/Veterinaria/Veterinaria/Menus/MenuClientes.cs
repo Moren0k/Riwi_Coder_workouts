@@ -1,4 +1,5 @@
 using Veterinaria.Data;
+using Veterinaria.Models;
 using Veterinaria.Services;
 
 namespace Veterinaria.Menus;
@@ -22,6 +23,9 @@ public class MenuClientes
             Console.WriteLine("=== GESTIÓN DE CLIENTES ===");
             Console.WriteLine("1. Registrar cliente");
             Console.WriteLine("2. Listar clientes");
+            Console.WriteLine("3. Editar cliente");
+            Console.WriteLine("4. Eliminar cliente");
+            
             Console.WriteLine("3. Volver al menú principal");
             Console.Write("Seleccione una opción: ");
 
@@ -71,8 +75,13 @@ public class MenuClientes
         Console.Write("Correo electrónico: ");
         string correo = Console.ReadLine()!;
 
-        _clienteService.RegistrarCliente(id, nombre, apellido, edad, telefono, correo);
+        var cliente = new Cliente(id, nombre, apellido, edad, telefono, correo);
+        cliente.Registrar();
 
         Console.WriteLine("Cliente registrado correctamente.");
     }
+    
+    private void ListarClientes(){}
+    private void EditarCliente(){}
+    private void EliminarCliente(){}
 }

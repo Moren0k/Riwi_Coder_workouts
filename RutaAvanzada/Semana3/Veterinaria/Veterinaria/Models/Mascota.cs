@@ -1,12 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Veterinaria.Models;
 
 public class Mascota
 {
-    private int IdMascota { get; set; }
-    private string Nombre { get; set; }
-    private string Especie { get; set; }
-    private int Edad { get; set; }
-
+    [Key] public int IdMascota { get; set; }
+    public string Nombre { get; private set; }
+    public string Especie { get; private set; }
+    public int Edad { get; private set; }
+    
+    /* Constructores */
+    public Mascota() { }
     public Mascota(int idMascota, string nombre, string especie, int edad)
     {
         IdMascota = idMascota;
@@ -15,6 +19,7 @@ public class Mascota
         Edad = edad;
     }
     
+    /* Metodos */
     public void Registrar()
     {
         /* implementación común */

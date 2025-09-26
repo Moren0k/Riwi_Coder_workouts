@@ -1,11 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Veterinaria.Models;
 
 public class Veterinario : Persona
 {
-    private int IdVeterinario { get; set; }
-    private string Especialidad { get; set; }
-    private int AniosExperiencia { get; set; }
-
+    [Key] public int IdVeterinario { get; set; }
+    [MaxLength(100)] public string? Especialidad { get; private set; }
+    public int AniosExperiencia { get; private set; }
+    
+    /* Constructores */
+    public Veterinario() { }
     public Veterinario(int idVeterinario, string nombre, string apellido, int edad, string especialidad,
         int aniosExperiencia) : base(nombre, apellido, edad)
     {
@@ -13,7 +17,8 @@ public class Veterinario : Persona
         Especialidad = especialidad;
         AniosExperiencia = aniosExperiencia;
     }
-
+    
+    /* Metodos */
     public override void Registrar()
     {
         /* implementación */

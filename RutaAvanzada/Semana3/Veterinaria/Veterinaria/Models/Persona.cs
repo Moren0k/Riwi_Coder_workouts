@@ -5,10 +5,10 @@ namespace Veterinaria.Models;
 // Clase base abstracta
 public abstract class Persona
 {
-    protected string Nombre { get; set; }
-    protected string Apellido { get; set; }
-    protected int Edad { get; set; }
-
+    public string Nombre { get; protected set; }
+    public string Apellido { get; protected set; }
+    public int Edad { get; protected set; }
+    public Persona() { }
     protected Persona(string nombre, string apellido, int edad)
     {
         Nombre = nombre;

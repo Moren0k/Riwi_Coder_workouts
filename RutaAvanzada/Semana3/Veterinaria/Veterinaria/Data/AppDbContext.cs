@@ -5,16 +5,17 @@ namespace Veterinaria.Data;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Persona>  Personas { get; set; }
     public DbSet<Cliente>  Clientes { get; set; }
     public DbSet<Veterinario>   Veterinarios { get; set; }
+    public DbSet<Mascota>  Mascotas { get; set; }
+    public DbSet<Atencion>   Atenciones { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseMySql(
-                "server=localhost;database=veterinaria;user=root;password=",
+                "server=localhost;database=veterinaria;user=userv;password=123",
                 new MySqlServerVersion(new Version(8, 0, 36))
             );
         }

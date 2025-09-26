@@ -1,13 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Veterinaria.Models;
 
 public class Atencion
 {
-    private int IdAtencion { get; set; }
-    private DateTime Fecha { get; set; }
-    private string Problema { get; set; }
-    private int MascotaId { get; set; }
-    private int VeterinarioId { get; set; }
-
+    [Key] public int IdAtencion { get; private set; }
+    public DateTime Fecha { get; private set; }
+    public string Problema { get; private set; }
+    public int MascotaId { get; private set; }
+    public int VeterinarioId { get; private set; }
+    
+    /* Constructores */
+    public Atencion() { }
     public Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId,  int veterinarioId)
     {
         IdAtencion = idAtencion;
@@ -17,6 +21,7 @@ public class Atencion
         VeterinarioId = veterinarioId;
     }
     
+    /* Metodos */
     public void Registrar()
     {
         /* implementación común */
