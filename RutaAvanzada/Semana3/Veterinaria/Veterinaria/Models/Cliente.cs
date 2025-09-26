@@ -17,21 +17,21 @@ public class Cliente : Persona
 
     public override void Registrar()
     {
-        /* implementación común */
+        /* implementación */
     }
 
     public override void Listar()
     {
-        /* implementación común */
+        /* implementación */
     }
 
     public override void Editar()
     {
-        /* implementación común */
+        /* implementación */
     }
 
     public override void Eliminar()
     {
-        /* implementación común */
+        /* implementación */
     }
 }

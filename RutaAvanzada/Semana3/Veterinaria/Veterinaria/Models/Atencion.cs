@@ -16,4 +16,24 @@ public class Atencion
         MascotaId = mascotaId;
         VeterinarioId = veterinarioId;
     }
+    
+    public void Registrar()
+    {
+        /* implementación común */
+    }
+
+    public void Listar()
+    {
+        /* implementación común */
+    }
+
+    public void Editar()
+    {
+        /* implementación común */
+    }
+
+    public void Eliminar()
+    {
+        /* implementación común */
+    }
 }
