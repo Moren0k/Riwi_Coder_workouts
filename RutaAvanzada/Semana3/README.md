@@ -52,7 +52,6 @@ Metodos:
 - IdMascota
 - nombre
 - especie
-- raza
 - edad
 - dueño _*IdCliente*
 
