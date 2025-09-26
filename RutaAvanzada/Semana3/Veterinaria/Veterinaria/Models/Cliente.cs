@@ -4,11 +4,15 @@ namespace Veterinaria.Models;
 
 public class Cliente : Persona //ClaseHija
 {
-    [Key] private int IdCliente { get; set; }
-    [MaxLength(20)] private string? Telefono { get; set; }
-    [MaxLength(100)] private string? CorreoElectronico { get; set; }
+    [Key] public int IdCliente { get; set; }
+    [MaxLength(20)] public string? Telefono { get; set; }
+    [MaxLength(100)] public string? CorreoElectronico { get; set; }
 
-    protected Cliente(int idCliente, string nombre, string apellido, int edad, string telefono,
+    protected Cliente()
+    {
+    }
+
+    public Cliente(int idCliente, string nombre, string apellido, int edad, string telefono,
         string correoElectronico) :
         base(nombre, apellido, edad) //Constructor
     {

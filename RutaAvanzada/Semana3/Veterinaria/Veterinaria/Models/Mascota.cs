@@ -4,10 +4,14 @@ namespace Veterinaria.Models;
 
 public class Mascota
 {
-    [Key] private int IdMascota { get; set; }
-    [MaxLength(100)] private string Nombre { get; set; }
-    [MaxLength(100)] private string Especie { get; set; }
-    private int Edad { get; set; }
+    [Key] public int IdMascota { get; set; }
+    [MaxLength(100)] protected string Nombre { get; set; }
+    [MaxLength(100)] protected string Especie { get; set; }
+    protected int Edad { get; set; }
+
+    protected Mascota()
+    {
+    }
 
     protected Mascota(int idMascota, string nombre, string especie, int edad) //Constructor
     {

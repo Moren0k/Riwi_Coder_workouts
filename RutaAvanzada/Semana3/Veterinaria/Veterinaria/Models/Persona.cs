@@ -2,9 +2,13 @@ namespace Veterinaria.Models;
 
 public abstract class Persona //SuperClase
 {
-    protected string Nombre { get; set; }
-    protected string Apellido { get; set; }
-    protected int Edad { get; set; }
+    public string Nombre { get; set; }
+    public string Apellido { get; set; }
+    public int Edad { get; set; }
+
+    protected Persona()
+    {
+    }
 
     protected Persona(string nombre, string apellido, int edad) //Constructor
     {

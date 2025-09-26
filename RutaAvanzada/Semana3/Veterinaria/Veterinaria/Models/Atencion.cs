@@ -4,11 +4,15 @@ namespace Veterinaria.Models;
 
 public class Atencion
 {
-    [Key] private int IdAtencion { get; set; }
-    private DateTime Fecha { get; set; }
-    [MaxLength(100)] private string Problema { get; set; }
-    private int MascotaId { get; set; }
-    private int VeterinarioId { get; set; }
+    [Key] public int IdAtencion { get; set; }
+    public DateTime Fecha { get; set; }
+    [MaxLength(100)] public string Problema { get; set; }
+    public int MascotaId { get; set; }
+    public int VeterinarioId { get; set; }
+
+    protected Atencion()
+    {
+    }
 
     protected Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId, int veterinarioId) //Constructor
     {

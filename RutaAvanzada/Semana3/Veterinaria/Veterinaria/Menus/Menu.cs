@@ -23,23 +23,18 @@ public class Menu
             switch (opcion)
             {
                 case "1":
-                    Console.WriteLine("Ejecutando GestionClientes...");
                     GestionClientes();
                     break;
                 case "2":
-                    Console.WriteLine("Ejecutando GestionVeterinarios...");
                     GestionVeterinarios();
                     break;
                 case "3":
-                    Console.WriteLine("Ejecutando GestionMascotas...");
                     GestionMascotas();
                     break;
                 case "4":
-                    Console.WriteLine("Ejecutando GestionAtenciones...");
                     GestionAtenciones();
                     break;
                 case "5":
-                    Console.WriteLine("Ejecutando ConsultasAvanzadas...");
                     ConsultasAvanzadas();
                     break;
                 case "0":
@@ -61,26 +56,31 @@ public class Menu
 
     private void GestionClientes()
     {
-        MenuClientes clientes = new MenuClientes();
-        clientes.Mostrar();
+        var menu = new MenuClientes();
+        menu.Mostrar();
     }
 
     private void GestionVeterinarios()
     {
-        //Kevin
+        var menu = new MenuVeterinarios();
+        menu.Mostrar();
     }
 
     private void GestionMascotas()
     {
-        //Mariana
+        var menu = new MenuMascotas();
+        menu.Mostrar();
     }
 
     private void GestionAtenciones()
     {
-        //Santos
+        var menu = new MenuAtenciones();
+        menu.Mostrar();
     }
 
     private void ConsultasAvanzadas()
     {
+        var menu = new MenuConsultas();
+        menu.Mostrar();
     }
 }
