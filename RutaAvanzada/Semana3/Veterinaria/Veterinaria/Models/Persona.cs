@@ -1,24 +1,15 @@
-using Veterinaria.Services;
-
 namespace Veterinaria.Models;
 
-// Clase base abstracta
-public abstract class Persona
+public abstract class Persona //SuperClase
 {
-    public string Nombre { get; protected set; }
-    public string Apellido { get; protected set; }
-    public int Edad { get; protected set; }
-    public Persona() { }
-    protected Persona(string nombre, string apellido, int edad)
+    protected string Nombre { get; set; }
+    protected string Apellido { get; set; }
+    protected int Edad { get; set; }
+
+    protected Persona(string nombre, string apellido, int edad) //Constructor
     {
         Nombre = nombre;
         Apellido = apellido;
         Edad = edad;
     }
-    
-    //Metodos Padres
-    public virtual void Registrar(){}
-    public virtual void Listar(){}
-    public virtual void Editar(){}
-    public virtual void Eliminar(){}
 }

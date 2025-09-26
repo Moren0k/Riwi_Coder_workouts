@@ -5,7 +5,7 @@ namespace Veterinaria
     {
         public static void Main(string[] args)
         {
-            // Verificar Coneccion con la DB
+            // Verificar Connection con la DB
             using var context = new AppDbContext();
             try
             {
@@ -23,7 +23,6 @@ namespace Veterinaria
                 Console.WriteLine("❌ Error al intentar conectar a la base de datos:");
                 Console.WriteLine(ex.Message);
             }
-
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
             

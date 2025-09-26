@@ -11,12 +11,4 @@ public class ClienteService
     {
         _db = context;
     }
-
-    public void RegistrarCliente(int idCliente, string nombre, string apellido, int edad, string telefono,
-        string correoElectronico)
-    {
-        var nuevoCliente = new Cliente(idCliente, nombre, apellido, edad, telefono, correoElectronico);
-        _db.Clientes.Add(nuevoCliente);
-        _db.SaveChanges();
-    }
 }

@@ -4,41 +4,18 @@ namespace Veterinaria.Models;
 
 public class Atencion
 {
-    [Key] public int IdAtencion { get; private set; }
-    public DateTime Fecha { get; private set; }
-    public string Problema { get; private set; }
-    public int MascotaId { get; private set; }
-    public int VeterinarioId { get; private set; }
-    
-    /* Constructores */
-    public Atencion() { }
-    public Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId,  int veterinarioId)
+    [Key] private int IdAtencion { get; set; }
+    private DateTime Fecha { get; set; }
+    [MaxLength(100)] private string Problema { get; set; }
+    private int MascotaId { get; set; }
+    private int VeterinarioId { get; set; }
+
+    protected Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId, int veterinarioId) //Constructor
     {
         IdAtencion = idAtencion;
         Fecha = fecha;
         Problema = problema;
         MascotaId = mascotaId;
         VeterinarioId = veterinarioId;
-    }
-    
-    /* Metodos */
-    public void Registrar()
-    {
-        /* implementación común */
-    }
-
-    public void Listar()
-    {
-        /* implementación común */
-    }
-
-    public void Editar()
-    {
-        /* implementación común */
-    }
-
-    public void Eliminar()
-    {
-        /* implementación común */
     }
 }

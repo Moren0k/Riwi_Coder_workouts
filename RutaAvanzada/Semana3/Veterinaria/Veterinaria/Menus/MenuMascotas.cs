@@ -1,6 +1,6 @@
 namespace Veterinaria.Menus;
 
-public class MenuClientes
+public class MenuMascotas
 {
     public void Mostrar()
     {
@@ -8,11 +8,11 @@ public class MenuClientes
         while (!volver)
         {
             Console.Clear();
-            Console.WriteLine("=== GESTIÓN DE CLIENTES ===");
-            Console.WriteLine("1. Registrar cliente");
-            Console.WriteLine("2. Listar clientes");
-            Console.WriteLine("3. Editar cliente");
-            Console.WriteLine("4. Eliminar cliente");
+            Console.WriteLine("=== GESTIÓN DE MASCOTAS ===");
+            Console.WriteLine("1. Registrar mascota");
+            Console.WriteLine("2. Listar mascotas");
+            Console.WriteLine("3. Editar mascota");
+            Console.WriteLine("4. Eliminar mascota");
             Console.WriteLine("0. Volver al menú principal");
             Console.Write("Seleccione una opción: ");
 
@@ -21,16 +21,16 @@ public class MenuClientes
             switch (opcion)
             {
                 case "1":
-                    RegistrarCliente();
+                    RegistrarMascota();
                     break;
                 case "2":
-                    ListarClientes();
+                    ListarMascotas();
                     break;
                 case "3":
-                    EditarCliente();
+                    EditarMascota();
                     break;
                 case "4":
-                    EliminarCliente();
+                    EliminarMascota();
                     break;
                 case "0":
                     volver = true;
@@ -48,19 +48,19 @@ public class MenuClientes
         }
     }
 
-    private void RegistrarCliente()
+    private void RegistrarMascota()
     {
     }
 
-    private void ListarClientes()
+    private void ListarMascotas()
     {
     }
 
-    private void EditarCliente()
+    private void EditarMascota()
     {
     }
 
-    private void EliminarCliente()
+    private void EliminarMascota()
     {
     }
 }

@@ -23,18 +23,23 @@ public class Menu
             switch (opcion)
             {
                 case "1":
+                    Console.WriteLine("Ejecutando GestionClientes...");
                     GestionClientes();
                     break;
                 case "2":
+                    Console.WriteLine("Ejecutando GestionVeterinarios...");
                     GestionVeterinarios();
                     break;
                 case "3":
+                    Console.WriteLine("Ejecutando GestionMascotas...");
                     GestionMascotas();
                     break;
                 case "4":
+                    Console.WriteLine("Ejecutando GestionAtenciones...");
                     GestionAtenciones();
                     break;
                 case "5":
+                    Console.WriteLine("Ejecutando ConsultasAvanzadas...");
                     ConsultasAvanzadas();
                     break;
                 case "0":
@@ -45,6 +50,7 @@ public class Menu
                     Console.WriteLine("Opción inválida, intente de nuevo.");
                     break;
             }
+
             if (!salir)
             {
                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
@@ -54,29 +60,27 @@ public class Menu
     }
 
     private void GestionClientes()
-    {//Jhos
-        Console.WriteLine("Ejecutando GestionClientes...");
+    {
         MenuClientes clientes = new MenuClientes();
         clientes.Mostrar();
     }
 
     private void GestionVeterinarios()
-    {//Kevin
-        Console.WriteLine("Ejecutando GestionVeterinarios...");
+    {
+        //Kevin
     }
 
     private void GestionMascotas()
-    {//Mariana
-        Console.WriteLine("Ejecutando GestionMascotas...");
+    {
+        //Mariana
     }
 
     private void GestionAtenciones()
-    {//Santos
-        Console.WriteLine("Ejecutando GestionAtenciones...");
+    {
+        //Santos
     }
 
     private void ConsultasAvanzadas()
     {
-        Console.WriteLine("Ejecutando ConsultasAvanzadas...");
     }
 }

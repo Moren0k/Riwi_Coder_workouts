@@ -1,6 +1,6 @@
 namespace Veterinaria.Menus;
 
-public class MenuClientes
+public class MenuVeterinarios
 {
     public void Mostrar()
     {
@@ -8,11 +8,11 @@ public class MenuClientes
         while (!volver)
         {
             Console.Clear();
-            Console.WriteLine("=== GESTIÓN DE CLIENTES ===");
-            Console.WriteLine("1. Registrar cliente");
-            Console.WriteLine("2. Listar clientes");
-            Console.WriteLine("3. Editar cliente");
-            Console.WriteLine("4. Eliminar cliente");
+            Console.WriteLine("=== GESTIÓN DE VETERINARIOS ===");
+            Console.WriteLine("1. Registrar veterinario");
+            Console.WriteLine("2. Listar veterinarios");
+            Console.WriteLine("3. Editar veterinario");
+            Console.WriteLine("4. Eliminar veterinario");
             Console.WriteLine("0. Volver al menú principal");
             Console.Write("Seleccione una opción: ");
 
@@ -21,16 +21,16 @@ public class MenuClientes
             switch (opcion)
             {
                 case "1":
-                    RegistrarCliente();
+                    RegistrarVeterinario();
                     break;
                 case "2":
-                    ListarClientes();
+                    ListarVeterinarios();
                     break;
                 case "3":
-                    EditarCliente();
+                    EditarVeterinario();
                     break;
                 case "4":
-                    EliminarCliente();
+                    EliminarVeterinario();
                     break;
                 case "0":
                     volver = true;
@@ -48,19 +48,19 @@ public class MenuClientes
         }
     }
 
-    private void RegistrarCliente()
+    private void RegistrarVeterinario()
     {
     }
 
-    private void ListarClientes()
+    private void ListarVeterinarios()
     {
     }
 
-    private void EditarCliente()
+    private void EditarVeterinario()
     {
     }
 
-    private void EliminarCliente()
+    private void EliminarVeterinario()
     {
     }
 }

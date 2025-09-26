@@ -1,6 +1,6 @@
 namespace Veterinaria.Menus;
 
-public class MenuClientes
+public class MenuAtenciones
 {
     public void Mostrar()
     {
@@ -8,11 +8,11 @@ public class MenuClientes
         while (!volver)
         {
             Console.Clear();
-            Console.WriteLine("=== GESTIÓN DE CLIENTES ===");
-            Console.WriteLine("1. Registrar cliente");
-            Console.WriteLine("2. Listar clientes");
-            Console.WriteLine("3. Editar cliente");
-            Console.WriteLine("4. Eliminar cliente");
+            Console.WriteLine("=== GESTIÓN DE ATENCIONES ===");
+            Console.WriteLine("1. Registrar atención");
+            Console.WriteLine("2. Listar atenciones");
+            Console.WriteLine("3. Editar atención");
+            Console.WriteLine("4. Eliminar atención");
             Console.WriteLine("0. Volver al menú principal");
             Console.Write("Seleccione una opción: ");
 
@@ -21,16 +21,16 @@ public class MenuClientes
             switch (opcion)
             {
                 case "1":
-                    RegistrarCliente();
+                    RegistrarAtencion();
                     break;
                 case "2":
-                    ListarClientes();
+                    ListarAtenciones();
                     break;
                 case "3":
-                    EditarCliente();
+                    EditarAtencion();
                     break;
                 case "4":
-                    EliminarCliente();
+                    EliminarAtencion();
                     break;
                 case "0":
                     volver = true;
@@ -48,19 +48,19 @@ public class MenuClientes
         }
     }
 
-    private void RegistrarCliente()
+    private void RegistrarAtencion()
     {
     }
 
-    private void ListarClientes()
+    private void ListarAtenciones()
     {
     }
 
-    private void EditarCliente()
+    private void EditarAtencion()
     {
     }
 
-    private void EliminarCliente()
+    private void EliminarAtencion()
     {
     }
 }
