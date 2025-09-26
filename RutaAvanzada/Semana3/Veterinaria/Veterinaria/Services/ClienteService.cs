@@ -12,7 +12,7 @@ public class ClienteService
         _db = context;
     }
 
-    public void InsertCliente(int idCliente, string nombre, string apellido, int edad, string telefono,
+    public void RegistrarCliente(int idCliente, string nombre, string apellido, int edad, string telefono,
         string correoElectronico)
     {
         var nuevoCliente = new Cliente(idCliente, nombre, apellido, edad, telefono, correoElectronico);

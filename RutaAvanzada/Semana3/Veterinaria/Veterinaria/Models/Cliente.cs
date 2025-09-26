@@ -1,3 +1,5 @@
+using Veterinaria.Data;
+using Veterinaria.Services;
 namespace Veterinaria.Models;
 
 // Clase derivada
@@ -17,7 +19,9 @@ public class Cliente : Persona
 
     public override void Registrar()
     {
-        /* implementación */
+        using var context = new AppDbContext();
+        var servicio = new ClienteService(context);
+        servicio.RegistrarCliente(IdCliente, Nombre, Apellido, Edad, Telefono, CorreoElectronico);
     }
 
     public override void Listar()
