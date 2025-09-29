@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using Veterinaria.Data;
 using Veterinaria.Interfaces;
 using Veterinaria.Models;
@@ -7,39 +6,38 @@ namespace Veterinaria.Services;
 
 public class ClienteService : IPersona<Cliente>
 {
-    private readonly AppDbContext _db;
-    public ClienteService(AppDbContext db)
+    private readonly AppDbContext _context;
+
+    public ClienteService(AppDbContext context)
     {
-        _db = db;
+        _context = context;
     }
 
-    public async Task<Cliente> Registrar(Cliente entity)
+    public Task<Cliente> Registrar(Cliente entity)
     {
-        _db.Clientes.Add(entity);
-        await _db.SaveChangesAsync();
-        return entity;
+        _context.Clientes.Add(entity);
+        _context.SaveChanges();
+        return Task.FromResult(entity);
     }
 
-    public async Task<IEnumerable<Cliente>> Listar()
+    public Task<IEnumerable<Cliente>> Listar()
     {
-        return await _db.Clientes.ToListAsync();
+        return Task.FromResult<IEnumerable<Cliente>>(_context.Clientes.ToList());
     }
 
-    public async Task<Cliente> Editar(Cliente entity)
+    public Task<Cliente> Editar(Cliente entity)
     {
-        _db.Clientes.Update(entity);
-        await _db.SaveChangesAsync();
-        return entity;
+        _context.Clientes.Update(entity);
+        _context.SaveChanges();
+        return Task.FromResult(entity);
     }
 
-    public async Task<Cliente> Eliminar(int id)
+    public bool Eliminar(int id)
     {
-        var cliente = await _db.Clientes.FindAsync(id);
-        if (cliente != null)
-        {
-            _db.Clientes.Remove(cliente);
-            await _db.SaveChangesAsync();
-        }
-        return cliente!;
+        var cliente = _context.Clientes.Find(id);
+        if (cliente == null) return false;
+        _context.Clientes.Remove(cliente);
+        _context.SaveChanges();
+        return true;
     }
 }

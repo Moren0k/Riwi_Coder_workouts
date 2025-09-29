@@ -7,5 +7,5 @@ public interface IPersona<T> where T : Persona
     Task<T> Registrar(T entity); //Registrar
     Task<IEnumerable<T>> Listar(); //Listar
     Task<T> Editar(T entity); //Editar
-    Task<T> Eliminar(int id); //Eliminar
+    bool Eliminar(int id); //Eliminar
 }

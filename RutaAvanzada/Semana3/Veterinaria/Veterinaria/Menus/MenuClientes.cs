@@ -1,5 +1,4 @@
 using Veterinaria.Data;
-using Veterinaria.Interfaces;
 using Veterinaria.Models;
 using Veterinaria.Services;
 
@@ -53,105 +52,94 @@ public class MenuClientes
         }
     }
 
-    private async Task RegistrarCliente()
+    private void RegistrarCliente()
     {
-        using var context = new AppDbContext();
-        var service = new ClienteService(context);
+        var contex = new AppDbContext();
+        var service = new ClienteService(contex);
 
-        Console.Clear();
-        Console.WriteLine("=== REGISTRAR CLIENTE ===");
-        Console.Write("ID: ");
-        int id = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Nombre: ");
+        Console.WriteLine("\n=== REGISTRAR CLIENTE ==="); //Pedir todos los datos del nuevo cliente
+        Console.Write("Ingrese el id del cliente: ");
+        int clienteId = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese el nombre del cliente: ");
         string nombre = Console.ReadLine();
-        Console.Write("Apellido: ");
+        Console.WriteLine("Ingrese el apellido del cliente: ");
         string apellido = Console.ReadLine();
-        Console.Write("Edad: ");
-        int edad = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Telefono: ");
+        Console.WriteLine("Ingrese la edad del cliente: ");
+        int edad = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese el numero de telefono del cliente: ");
         string telefono = Console.ReadLine();
-        Console.Write("Correo Electronico: ");
+        Console.WriteLine("Ingrese el correo electronico del cliente: ");
         string correoElectronico = Console.ReadLine();
 
-        var cliente = new Cliente(id, nombre, apellido, edad, telefono, correoElectronico);
-        await service.Registrar(cliente);
-        Console.WriteLine("Cliente registrado correctamente");
+        //Crear el objeto Cliente
+        var nuevoCliente = new Cliente(clienteId, nombre, apellido, edad, telefono, correoElectronico);
+        service.Registrar(nuevoCliente);
+        Console.Write("Cliente agregado correctamente.");
     }
-    
-    private async Task ListarClientes()
-    {
-        using var context = new AppDbContext();
-        var service = new ClienteService(context);
 
-        var clientes = await service.Listar();
-        Console.WriteLine("=== LISTA DE CLIENTES ===");
-        foreach (var c in clientes)
+    private async void ListarClientes()
+    {
+        var contex = new AppDbContext();
+        var service = new ClienteService(contex);
+
+        Console.WriteLine("\n=== LISTADO CLIENTES ===");
+        IEnumerable<Cliente> clientes = await service.Listar(); //Obtener los clientes de la db
+        foreach (var cliente in clientes)
         {
-            Console.WriteLine($"{c.IdCliente} - {c.Nombre} {c.Apellido} ({c.Edad})");
+            Console.WriteLine( //Mostrar la lista con datos de los clientes
+                $"ID:[{cliente.IdCliente}], Nombre:[{cliente.Nombre}{cliente.Apellido}] - {cliente.CorreoElectronico}");
         }
+
+        Console.WriteLine("Clientes listados correctamente.");
     }
 
-
-    private async Task EditarCliente()
+    private async void EditarCliente()
     {
-        using var context = new AppDbContext();
-        var service = new ClienteService(context);
+        var contex = new AppDbContext();
+        var service = new ClienteService(contex);
 
-        Console.Clear();
-        Console.WriteLine("=== EDITAR CLIENTE ===");
+        ListarClientes(); //Mostrar clientes
 
+        Console.WriteLine("\n=== EDITAR CLIENTE ==="); //Pedir todos los datos del nuevo cliente
         Console.Write("Ingrese el ID del cliente a editar: ");
-        int id = Convert.ToInt32(Console.ReadLine());
+        var clienteId = int.Parse(Console.ReadLine());
+        Console.Write("Ingrese el NUEVO nombre del cliente: ");
+        string nombre = Console.ReadLine() ?? string.Empty;
+        Console.Write("Ingrese el NUEVO apellido del cliente: ");
+        string apellido = Console.ReadLine() ?? string.Empty;
+        Console.Write("Ingrese la NUEVA edad del cliente: ");
+        int edad = int.Parse(Console.ReadLine());
+        Console.Write("Ingrese el NUEVO teléfono del cliente: ");
+        string telefono = Console.ReadLine() ?? string.Empty;
+        Console.Write("Ingrese el NUEVO correo electrónico del cliente: ");
+        string correoElectronico = Console.ReadLine() ?? string.Empty;
 
-        // buscar cliente existente
-        var cliente = await context.Clientes.FindAsync(id);
-        if (cliente == null)
-        {
-            Console.WriteLine("Cliente no encontrado.");
-            return;
-        }
-        
-        Console.Write("Nuevo Nombre : ");
-        string? nombre = Console.ReadLine();
-        Console.Write("Nuevo Apellido : ");
-        string? apellido = Console.ReadLine();
-        Console.Write("Nueva Edad : ");
-        int edad = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Nuevo Teléfono : ");
-        string? telefono = Console.ReadLine();
-        Console.Write("Nuevo Correo Electrónico : ");
-        string? correo = Console.ReadLine();
-        
-        cliente.Nombre = nombre;
-        cliente.Apellido = apellido;
-        cliente.Edad = edad;
-        cliente.Telefono = telefono;
-        cliente.CorreoElectronico = correo;
+        //Crear el objeto Cliente actualizado
+        var clienteParaActualizar = new Cliente(clienteId, nombre, apellido, edad, telefono, correoElectronico);
+        Cliente clienteEditado = await service.Editar(clienteParaActualizar);
 
-        await service.Editar(cliente);
-        Console.WriteLine("Cliente editado correctamente");
+        Console.Write("Cliente editado correctamente.");
     }
 
-
-    private async Task EliminarCliente()
+    public void EliminarCliente()
     {
-        using var context = new AppDbContext();
-        var service = new ClienteService(context);
+        var contex = new AppDbContext();
+        var service = new ClienteService(contex);
 
-        Console.Clear();
-        Console.WriteLine("=== ELIMINAR CLIENTE ===");
+        ListarClientes(); //Mostrar clientes
 
-        Console.Write("Ingrese el ID del cliente a eliminar: ");
-        int id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("\n=== ELIMINAR CLIENTE ==="); //Pedir ID del cliente a eliminar
+        Console.Write("Ingrese el id del cliente: ");
+        int clienteId = int.Parse(Console.ReadLine());
 
-        var cliente = await context.Clientes.FindAsync(id);
-        if (cliente == null)
+        bool task = service.Eliminar(clienteId); //Validar la eliminación
+        if (task)
         {
-            Console.WriteLine("Cliente no encontrado.");
-            return;
+            Console.WriteLine("Cliente eliminado correctamente.");
         }
-        await service.Eliminar(id);
-        Console.WriteLine("Cliente eliminado correctamente.");
+        else
+        {
+            Console.WriteLine("Cliente no existe en el sistema.");
+        }
     }
-
 }
