@@ -10,11 +10,11 @@ public class Atencion
     public int MascotaId { get; set; }
     public int VeterinarioId { get; set; }
 
-    protected Atencion()
+    public Atencion()
     {
     }
 
-    protected Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId, int veterinarioId) //Constructor
+    public Atencion(int idAtencion, DateTime fecha, string problema, int mascotaId, int veterinarioId) //Constructor
     {
         IdAtencion = idAtencion;
         Fecha = fecha;

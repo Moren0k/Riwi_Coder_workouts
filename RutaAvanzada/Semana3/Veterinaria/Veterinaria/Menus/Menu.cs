@@ -26,16 +26,16 @@ public class Menu
                     GestionClientes();
                     break;
                 case "2":
-                    //GestionVeterinarios();
+                    GestionVeterinarios();
                     break;
                 case "3":
-                    //GestionMascotas();
+                    GestionMascotas();
                     break;
                 case "4":
-                    //GestionAtenciones();
+                    GestionAtenciones();
                     break;
                 case "5":
-                    //ConsultasAvanzadas();
+                    ConsultasAvanzadas();
                     break;
                 case "0":
                     salir = true;
@@ -57,6 +57,30 @@ public class Menu
     private void GestionClientes()
     {
         MenuClientes menu = new MenuClientes();
+        menu.Mostrar();
+    }
+
+    private void GestionVeterinarios()
+    {
+        MenuVeterinarios menu = new MenuVeterinarios();
+        menu.Mostrar();
+    }
+
+    private void GestionMascotas()
+    {
+        MenuMascotas menu = new MenuMascotas();
+        menu.Mostrar();
+    }
+
+    private void GestionAtenciones()
+    {
+        MenuAtenciones menu = new MenuAtenciones();
+        menu.Mostrar();
+    }
+    
+    private void ConsultasAvanzadas()
+    {
+        MenuConsultasAvanzadas menu = new MenuConsultasAvanzadas();
         menu.Mostrar();
     }
 }

@@ -8,11 +8,11 @@ public class Veterinario : Persona //ClaseHija
     [MaxLength(100)] public string? Especialidad { get; set; }
     public int AniosExperiencia { get; set; }
 
-    protected Veterinario()
+    public Veterinario()
     {
     }
 
-    protected Veterinario(int idVeterinario, string nombre, string apellido, int edad, string especialidad,
+    public Veterinario(int idVeterinario, string nombre, string apellido, int edad, string especialidad,
         int aniosExperiencia) : base(nombre, apellido, edad) //Constructor
     {
         IdVeterinario = idVeterinario;
