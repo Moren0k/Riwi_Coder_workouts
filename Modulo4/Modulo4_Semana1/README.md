@@ -19,7 +19,6 @@ Diseñar y documentar un modelo de base de datos relacional que permita:
 - Registrar diagnósticos asociados a cada cita.
 - Facilitar consultas y reportes para mejorar la atención médica.
 
-
 ## 3. Entidades y Atributos Principales Creados
 
 ### 3.1 Pacientes

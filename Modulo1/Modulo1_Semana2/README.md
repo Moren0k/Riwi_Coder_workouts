@@ -1,5 +1,6 @@
-# Desarrolla un programa en Python que gestione una serie de calificaciones y estadísticas de manera interactiva.
-## El programa que vas a desarrollar en este entrenamiento debe:
+# Desarrolla un programa en Python que gestione una serie de calificaciones y estadísticas de manera interactiva
+
+## El programa que vas a desarrollar en este entrenamiento debe
 
     Determinar el estado de aprobación:
         Solicitar al usuario ingresar una calificación numérica (de 0 a 100) 
@@ -18,7 +19,9 @@
         Calcular y mostrar el promedio de las calificaciones en la lista
 
 ---
-# ¿Qué hice?
+
+## ¿Qué hice?
+
     Entrada de múltiples calificaciones separadas por comas o individuales: ✔️
 
     Verificación de rangos válidos: ✔️
@@ -35,7 +38,9 @@
 
     Lógica estructurada y sin repeticiones innecesarias: ✔️
 ---
+
 ### Uso del inglés
+
 | Uso en inglés            | Uso en español                     |
 | ------------------------ | ---------------------------------- |
 | `lists_valid_notes`      | `lista_notas_validas`              |

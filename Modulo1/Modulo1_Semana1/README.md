@@ -1,5 +1,7 @@
 # Entrenamiento Módulo 1 – Semana 1
+
 ## Sistema de validación de productos
+
 Eres un desarrollador junior en una empresa de software, y te han asignado la tarea de crear un
 programa que calcule el costo total de una compra en una tienda. El programa debe interactuar con
 el usuario a través de la consola, solicitando cuatro datos esenciales: el nombre del producto, el

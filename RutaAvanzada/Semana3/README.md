@@ -13,10 +13,11 @@ Este es un sistema de gestión para una veterinaria, pensado para ser usado desd
 - Consultar y editar la información de clientes, veterinarios, mascotas y atenciones.
 - Eliminar registros si es necesario.
 - Realizar consultas avanzadas como:
-	- Ver todas las mascotas de un cliente.
-	- Saber cuál es el veterinario que más atenciones ha realizado.
-	- Conocer la especie de mascota más atendida en la clínica.
-	- Saber qué cliente tiene más mascotas registradas.
+
+  - Ver todas las mascotas de un cliente.
+  - Saber cuál es el veterinario que más atenciones ha realizado.
+  - Conocer la especie de mascota más atendida en la clínica.
+  - Saber qué cliente tiene más mascotas registradas.
 
 ## ¿Cómo se usa?
 
@@ -34,9 +35,6 @@ Este es un sistema de gestión para una veterinaria, pensado para ser usado desd
 - Para salir del sistema, elige la opción "Salir" en el menú principal.
 
 ---
-# Información técnica (para referencia)
-
-# Sistema Veterinaria San Miguel
 
 ## Entidades principales del sistema (Persona, Cliente, Veterinario, Mascota, Atención)
 

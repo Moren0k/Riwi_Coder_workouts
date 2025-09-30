@@ -1,4 +1,4 @@
-## Objetivo
+# Objetivo
 
 Desarrollar un programa en Python que permita gestionar de manera eficiente el inventario de productos de una tienda, aplicando funciones con parámetros, funciones lambda, y estructuras de datos como listas, tuplas y diccionarios.
 
@@ -6,7 +6,7 @@ Desarrollar un programa en Python que permita gestionar de manera eficiente el i
 
 Eres parte del equipo de desarrollo de software de una tienda que desea mejorar la gestión de su inventario digital. Te han asignado la tarea de crear un programa en Python que permita al equipo añadir, consultar, actualizar y eliminar productos del inventario de manera eficiente, así como calcular el valor total del inventario. Tu programa debe interactuar con el usuario para realizar las siguientes operaciones:
 
-```
+```bash
 Añadir productos:
     Cada producto debe estar definido por su nombre, precio y cantidad disponible
     Esta información seerá almacenada de modo que el inventario pueda crecer dinámicament
