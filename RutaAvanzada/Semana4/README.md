@@ -111,3 +111,10 @@ Está compuesto por tres entidades principales:
 **Book**: almacena la información de los libros (Título, Autor, Código, EjemplaresDisponibles). El campo **Código** es único.  
 
 **Loan**: representa los préstamos realizados. Contiene la FechaPrestamo, la FechaDevolucionEsperada y la FechaDevolucionReal. Incluye dos claves foráneas: **UserId** que referencia a **User**, y **BookId** que referencia a **Book**.
+
+---
+
+## Bases de datos
+
+imagen de la base de datos
+![Base de datos](docs/DigitalLibrary_DbMySQL.png)

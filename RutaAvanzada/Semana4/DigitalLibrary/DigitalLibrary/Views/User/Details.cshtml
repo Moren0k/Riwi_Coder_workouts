@@ -1,0 +1,66 @@
+@model DigitalLibrary.Models.User
+
+<h1 class="text-center">Detalles del Usuario</h1>
+
+<div class="row">
+    <div class="col-md-4"> <!-- Formulario Principal que Edita el Usuario -->
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Edit"> <!-- Campos de entrada: Nombre, Documento, Correo, Teléfono -->
+                    <h6 class="text-center">Editar Usuario</h6>
+
+                    <!-- Campo oculto que guarda el Id del cliente (no se modifica) -->
+                    <input type="hidden" asp-for="Id"/>
+
+                    <div class="row">
+                        <div class="p-1">
+                            <input type="text" class="form-control" name="Name"
+                                   placeholder="@Model.Name" value="@Model.Name">
+                        </div>
+
+                        <!-- Campo editable para el Documento -->
+                        <div class="p-1">
+                            <input type="text" class="form-control" name="Document"
+                                   placeholder="@Model.Document" value="@Model.Document">
+                        </div>
+
+                        <!-- Campo editable para el Correo -->
+                        <div class="p-1">
+                            <input type="text" class="form-control" name="Email"
+                                   placeholder="@Model.Email" value="@Model.Email">
+                        </div>
+
+                        <!-- Campo editable para el Teléfono -->
+                        <div class="p-1">
+                            <input type="text" class="form-control" name="Phone"
+                                   placeholder="@Model.Phone" value="@Model.Phone">
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Botón para guardar los cambios realizados en el Usuario -->
+                    <button type="submit" class="btn btn-success w-100">Guardar cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna derecha: tabla que muestra la información actual del cliente -->
+    <div class="col-md-8"> <!-- Tabla Principal que muestra los Detalles del Cliente-->
+        <!-- Botón para regresar a la lista de clientes (Index) -->
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Cliente">Volver</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>TEMPORTAL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!-- Fila que muestra todos los datos actuales del cliente -->
+                <td>TEMPORAL</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
