@@ -51,7 +51,7 @@ Digitalizar la gestión de usuarios, libros y préstamos de la biblioteca con C#
 ## Diseño
 
 Diagrama de clases
-![Diagrama de clases](/docs/DiagramaDeClases.png)
+![Diagrama de clases](docs/DiagramaDeClases.png)
 
 ## Modelo de datos (conceptual, sin código)
 
@@ -72,7 +72,7 @@ Diagrama de clases
 ## Flujo de operaciones
 
 Diagrama de flujo
-![Diagrama de flujo](/docs/DiagramaDeFlujo.png)
+![Diagrama de flujo](docs/DiagramaDeFlujo.png)
 
 - Registrar usuarios y libros.  
 - Crear préstamo → validar stock → disminuir ejemplar.  
@@ -84,7 +84,7 @@ Diagrama de flujo
 ## Casos de Uso
 
 Diagrama de casos de uso
-![Diagrama de casos de uso](/docs/DiagramaDeCasosDeUso.png)
+![Diagrama de casos de uso](docs/DiagramaDeCasosDeUso.png)
 
 El diagrama muestra cómo el **bibliotecario** interactúa con el sistema de Biblioteca Digital.  
 Incluye las funciones principales:
@@ -101,7 +101,7 @@ Incluye las funciones principales:
 ## Diagrama Entidad–Relación (ERD)
 
 Diagrama Entidad–Relación
-![Diagrama Entidad–Relación](/docs/DiagramaEntidadRelacion.png)
+![Diagrama Entidad–Relación](docs/DiagramaEntidadRelacion.png)
 
 El diagrama entidad–relación define la estructura de la base de datos de la Biblioteca Digital.  
 Está compuesto por tres entidades principales:
