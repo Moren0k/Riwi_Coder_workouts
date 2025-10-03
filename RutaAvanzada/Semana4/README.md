@@ -22,7 +22,7 @@ Digitalizar la gestión de usuarios, libros y préstamos de la biblioteca con C#
 
 - Registrar usuario con datos: Nombre, Documento, Correo, Teléfono.  
 - Documento único.  
-- Listar todos los usuarios.  
+- Listar todos los usuarios.
 
 ### Libros
 
@@ -110,11 +110,4 @@ Está compuesto por tres entidades principales:
 
 **Book**: almacena la información de los libros (Título, Autor, Código, EjemplaresDisponibles). El campo **Código** es único.  
 
-**Loan**: representa los préstamos realizados. Contiene la FechaPrestamo, la FechaDevolucionEsperada y la FechaDevolucionReal. Incluye dos claves foráneas: **UserId** que referencia a **User**, y **BookId** que referencia a **Book**.  
-
-### Relaciones
-- Un **User** puede tener muchos **Loans**.  
-- Un **Book** puede estar asociado a muchos **Loans**.  
-- La tabla **Loan** sirve como enlace entre **User** y **Book**.  
-
-Este diseño garantiza integridad referencial, evita duplicados y permite gestionar los procesos de registro, préstamo, devolución y consultas dentro del sistema.  
+**Loan**: representa los préstamos realizados. Contiene la FechaPrestamo, la FechaDevolucionEsperada y la FechaDevolucionReal. Incluye dos claves foráneas: **UserId** que referencia a **User**, y **BookId** que referencia a **Book**.
