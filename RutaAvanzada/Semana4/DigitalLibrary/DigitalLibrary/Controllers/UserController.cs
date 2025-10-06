@@ -12,27 +12,33 @@ public class UserController : Controller
     {
         _context = context; //DataBase
     }
-    
-    public ActionResult Index() //Show All
+
+    public IActionResult Index() //Show all
     {
-        return View(_context.Users.ToList());
+        var mv = new ViewModel
+        {
+            Users = _context.Users.ToList(),
+            Books = _context.Books.ToList(),
+            Loans = _context.Loans.ToList()
+        };
+        return View(mv);
     }
 
-    public ActionResult Save(User user) //Save one User
+    public IActionResult Save(User user) //Save one User
     {
         _context.Users.Add(user);
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id) //Show details of a User
+    public IActionResult DetailsUser(int id) //Show details of a User
     {
         var user = _context.Users.FirstOrDefault(u => u.Id == id);
         if (user == null) return NotFound();
         return View(user);
     }
 
-    public ActionResult Edit(User? userEdit) //Edit of a User
+    public IActionResult Edit(User? userEdit) //Edit of a User
     {
         var user = _context.Users.FirstOrDefault(u => userEdit != null && u.Id == userEdit.Id);
         if (userEdit == null) return NotFound();
@@ -46,14 +52,13 @@ public class UserController : Controller
         }
 
         _context.SaveChanges();
-        
         return RedirectToAction("Index");
     }
 
-    public ActionResult Delete(int id) //Detele of a User
+    public IActionResult Delete(int id) //Detele of a User
     {
         var user = _context.Users.Find(id);
-        if (user == null) return RedirectToAction("Index");
+        if (user == null) return NotFound();
         _context.Users.Remove(user);
         _context.SaveChanges();
         return RedirectToAction("Index");
