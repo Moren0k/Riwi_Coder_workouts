@@ -60,20 +60,17 @@ public class LoanController : Controller
         return RedirectToAction("Index");
     }
     
-    public IActionResult EditDay(Loan? loanDayDate)
+    public IActionResult EditDay(int id)
     {
-        var loan = _context.Loans.FirstOrDefault(l => loanDayDate != null && l.Id == loanDayDate.Id);
-        if (loanDayDate == null) return NotFound();
+        var loan = _context.Loans.FirstOrDefault(l => l.Id == id);
+        if (loan == null) return NotFound();
 
-        if (loan != null)
-        {
-            loan.ReturnDay = DateTime.Today;
-        }
-        
-        var book = _context.Books.FirstOrDefault(b => b.Id == loanDayDate.BookId);
+        loan.ReturnDay = DateTime.Today;
+
+        var book = _context.Books.FirstOrDefault(b => b.Id == loan.BookId);
         if (book != null)
         {
-            book.Stock = + 1;
+            book.Stock += 1;
         }
 
         _context.SaveChanges();

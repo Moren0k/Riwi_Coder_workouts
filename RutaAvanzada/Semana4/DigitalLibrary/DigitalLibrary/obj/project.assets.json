@@ -2934,19 +2934,19 @@
     ]
   },
   "packageFolders": {
-    "/home/kevin-moreno/.nuget/packages/": {}
+    "/home/kevinmorenocsharp/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kevin-moreno/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/DigitalLibrary.csproj",
+      "projectUniqueName": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/DigitalLibrary.csproj",
       "projectName": "DigitalLibrary",
-      "projectPath": "/home/kevin-moreno/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/DigitalLibrary.csproj",
-      "packagesPath": "/home/kevin-moreno/.nuget/packages/",
-      "outputPath": "/home/kevin-moreno/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/obj/",
+      "projectPath": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/DigitalLibrary.csproj",
+      "packagesPath": "/home/kevinmorenocsharp/.nuget/packages/",
+      "outputPath": "/home/kevinmorenocsharp/RiderProjects/Riwi_Coder_workouts/RutaAvanzada/Semana4/DigitalLibrary/DigitalLibrary/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/kevin-moreno/.nuget/NuGet/NuGet.Config"
+        "/home/kevinmorenocsharp/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3010,7 +3010,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
