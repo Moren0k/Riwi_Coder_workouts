@@ -57,38 +57,35 @@ namespace PruebaRutaAvanzada.Controllers
 
         public IActionResult Edit(Patient? patientEdit) //Editar un Paciente
         {
+            if (patientEdit == null)
+                return RedirectToAction("Index");
+
             try
             {
-                //Buscar el Paciente y verificar que este en la DB
-                var patient = _context.Patients.FirstOrDefault(p => patientEdit != null && p.Id == patientEdit.Id);
+                var patient = _context.Patients.FirstOrDefault(p => p.Id == patientEdit.Id);
                 if (patient == null)
-                {
                     return RedirectToAction("Index");
-                }
-                
-                //Verificar que el Documento editado no sea igual a uno ya en la DB
-                if (_context.Patients.Any(p => patientEdit != null && p.Document == patientEdit.Document))
-                {
-                    return RedirectToAction("Index");
-                }
 
-                //Editar y guardar los nuevos datos del Paciente
-                if (patientEdit != null)
-                {
-                    patient.FirstName = patientEdit.FirstName?.ToLower();
-                    patient.LastName = patientEdit.LastName?.ToLower();
-                    patient.SecondLastName = patientEdit.SecondLastName?.ToLower();
-                    patient.Document = patientEdit.Document;
-                    patient.Phone = patientEdit.Phone;
-                    patient.Email = patientEdit.Email;
-                    patient.Age = patientEdit.Age;
-                }
+                // Evitar duplicados en documentos
+                if (_context.Patients.Any(p => p.Id != patientEdit.Id && p.Document == patientEdit.Document))
+                    return RedirectToAction("Index");
+
+                // Actualizar campos
+                patient.FirstName = patientEdit.FirstName?.ToLower();
+                patient.LastName = patientEdit.LastName?.ToLower();
+                patient.SecondLastName = patientEdit.SecondLastName?.ToLower();
+                patient.Document = patientEdit.Document;
+                patient.Phone = patientEdit.Phone;
+                patient.Email = patientEdit.Email;
+                patient.Age = patientEdit.Age;
+
                 _context.SaveChanges();
             }
             catch
             {
                 Console.WriteLine("Ocurrió un error al actualizar el paciente.");
             }
+
             return RedirectToAction("Index");
         }
 

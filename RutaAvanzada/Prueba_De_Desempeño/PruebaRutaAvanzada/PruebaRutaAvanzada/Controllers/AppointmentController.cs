@@ -73,40 +73,33 @@ namespace PruebaRutaAvanzada.Controllers
 
         public IActionResult Edit(Appointment? appointmentEdit)
         {
+            if (appointmentEdit == null) return RedirectToAction("Index");
+
             try
             {
-                //Buscar la Cita que esté en la DB
-                var appointment =
-                    _context.Appointments.FirstOrDefault(a => appointmentEdit != null && a.Id == appointmentEdit.Id);
-                if (appointment == null)
-                {
-                    return RedirectToAction("Index");
-                }
+                // Buscar la cita en la DB
+                var appointment = _context.Appointments.FirstOrDefault(a => a.Id == appointmentEdit.Id);
+                if (appointment == null) return RedirectToAction("Index");
 
-                //Validar de que los datos nuevos no sean de una cita ya creada
+                // Validar que no exista otra cita del mismo doctor en la misma fecha
                 var existeCita = _context.Appointments
-                    .Any(a => appointmentEdit != null
-                              && a.DoctorId == appointmentEdit.DoctorId
+                    .Any(a => a.Id != appointmentEdit.Id 
+                              && a.DoctorId == appointmentEdit.DoctorId 
                               && a.Date.Date == appointmentEdit.Date.Date);
-                if (existeCita)
-                {
-                    return RedirectToAction("Index");
-                }
+                if (existeCita) return RedirectToAction("Index");
 
-                if (appointmentEdit != null)
-                {
-                    appointment.PatientId = appointmentEdit.PatientId;
-                    appointment.DoctorId = appointmentEdit.DoctorId;
-                    appointment.Date = appointmentEdit.Date;
-                    appointment.Reason = appointmentEdit.Reason;
-                    appointment.Status = appointmentEdit.Status;
-                }
+                // Actualizar los datos
+                appointment.PatientId = appointmentEdit.PatientId;
+                appointment.DoctorId = appointmentEdit.DoctorId;
+                appointment.Date = appointmentEdit.Date;
+                appointment.Reason = appointmentEdit.Reason;
+                appointment.Status = appointmentEdit.Status;
 
                 _context.SaveChanges();
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("Ocurrió un error al actualizar la cita.");
+                Console.WriteLine("Ocurrió un error al actualizar la cita: " + ex.Message);
             }
 
             return RedirectToAction("Index");
