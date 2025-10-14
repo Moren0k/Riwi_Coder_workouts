@@ -1,0 +1,36 @@
+@model List<PruebaRutaAvanzada.Models.Email>
+
+@{
+    ViewData["Title"] = "Lista de Correos";
+}
+
+<h2>Lista de Correos</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Para</th>
+            <th>Mensaje</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var email in Model)
+        {
+            <tr>
+                <td>@email.Id</td>
+                <td>@email.EmailTo</td>
+                <td>@email.Message</td>
+                <td>@email.Status</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay correos para mostrar.</p>
+}

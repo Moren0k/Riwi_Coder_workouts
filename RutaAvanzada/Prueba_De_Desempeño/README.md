@@ -46,6 +46,11 @@ accesibilidad de la información.
 9. **POO**: Aplicar principios de Programación Orientada a Objetos en el diseño del sistema
 10. **Control de versiones**: Utilizar un sistema de control de versiones como Git para gestionar el código fuente
 
+## Descripción general del sistema
+
+El sistema de gestión de citas médicas para el Hospital San Vicente es una aplicación web desarrollada en C# utilizando ASP.NET Core y Entity Framework Core con MySQL como base de datos. El sistema permite a los usuarios gestionar la información de pacientes, médicos y citas médicas de manera eficiente y segura. La aplicación está diseñada siguiendo los principios de Programación Orientada a Objetos (POO) y aplica validaciones y manejo de errores para garantizar la integridad y robustez del sistema.
+El sistema cuenta con una interfaz de usuario intuitiva que facilita la interacción con las diferentes funcionalidades, incluyendo el registro de pacientes y médicos, la programación, cancelación y reprogramación de citas, así como la consulta de citas por paciente o médico. La arquitectura del sistema está diseñada para ser escalable y mantenible, permitiendo futuras mejoras y adaptaciones según las necesidades del hospital.
+
 ---
 
 ## Diagramas UML

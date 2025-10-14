@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaRutaAvanzada")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba89765dab2353a059ad730006353011aa1f63c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9476566d6d051727f20f2ec609912712412f0587")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaRutaAvanzada")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaRutaAvanzada")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

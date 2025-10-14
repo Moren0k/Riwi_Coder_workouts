@@ -12,10 +12,11 @@ public class Appointment
     [Required] public int DoctorId { get; set; }
     
     [Required] public DateTime Date { get; set; }
+    [Required] public DateTime Time { get; set; }
     
     [MaxLength(200)] public string? Reason { get; set; }
-    
-    [Required, MaxLength(20)] public string Status { get; set; } = "Scheduled";
+
+    [Required,MaxLength(20)] public string? Status { get; set; } = "Scheduled";
     
     //Relaciones
     [ForeignKey(nameof(PatientId))] public Patient? Patient { get; set; }

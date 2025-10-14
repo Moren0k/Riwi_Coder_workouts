@@ -12,8 +12,8 @@ using PruebaRutaAvanzada.Data;
 namespace PruebaRutaAvanzada.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251014123016_InitialCreate.2")]
-    partial class InitialCreate2
+    [Migration("20251014175941_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,6 +50,9 @@ namespace PruebaRutaAvanzada.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -103,6 +106,30 @@ namespace PruebaRutaAvanzada.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
+                });
+
+            modelBuilder.Entity("PruebaRutaAvanzada.Models.Email", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EmailTo")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Emails");
                 });
 
             modelBuilder.Entity("PruebaRutaAvanzada.Models.Patient", b =>

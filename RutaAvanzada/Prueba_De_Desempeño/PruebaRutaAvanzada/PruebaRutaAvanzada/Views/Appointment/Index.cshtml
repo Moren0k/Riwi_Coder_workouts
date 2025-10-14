@@ -1,0 +1,133 @@
+@model PruebaRutaAvanzada.Models.ViewModel
+<hr>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center mb-4 fw-bold text-primary">Administrador de Citas</h2>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white text-center fw-semibold">
+                    Crear Cita
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Appointment">
+                        <div class="mb-3">
+                            <label class="form-label">Paciente</label>
+                            <select class="form-control" name="PatientId" required>
+                                <option value="">-- Seleccione un Paciente --</option>
+                                @foreach (var patient in Model.Patients)
+                                {
+                                    <option value="@patient.Id">@patient.FirstName @patient.LastName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Doctor</label>
+                            <select class="form-control" name="DoctorId" required>
+                                <option value="">-- Seleccione un Doctor --</option>
+                                @foreach (var doctor in Model.Doctors)
+                                {
+                                    <option value="@doctor.Id">@doctor.FirstName @doctor.LastName</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" name="Date" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" class="form-control" name="Time" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Motivo</label>
+                            <input type="text" class="form-control" name="Reason" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select class="form-control" name="Status" required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Completada">Completada</option>
+                                <option value="Cancelada">Cancelada</option>
+                            </select>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success fw-semibold">
+                                Guardar Cita
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center fw-semibold">
+                    Lista de Citas Registradas
+                </div>
+                <div class="card-body">
+                    @if (Model.Appointments.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Paciente</th>
+                                        <th>Doctor</th>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
+                                        <th>Motivo</th>
+                                        <th>Estado</th>
+                                        <th class="text-center">Detalles</th>
+                                        <th class="text-center">Completar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var appointment in Model.Appointments)
+                                    {
+                                        <tr>
+                                            <td>@appointment.Patient?.FirstName @appointment.Patient?.LastName</td>
+                                            <td>@appointment.Doctor?.FirstName @appointment.Doctor?.LastName</td>
+                                            <td>@appointment.Date.ToString("dd MMMM yyyy")</td>
+                                            <td>@appointment.Time.ToString("HH:mm")</td>
+                                            <td>@appointment.Reason</td>
+                                            <td>@appointment.Status</td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-primary btn-sm"
+                                                   asp-action="DetailsAppointment"
+                                                   asp-controller="Appointment"
+                                                   asp-route-id="@appointment.Id">
+                                                    <i class="bi bi-pencil"></i> Detalles
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-primary btn-sm"
+                                                   asp-action="Completed"
+                                                   asp-controller="Appointment"
+                                                   asp-route-id="@appointment.Id">
+                                                    <i class="bi bi-pencil"></i> Completada
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center text-danger fw-semibold mt-3">
+                            ¡No hay citas registradas!
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
