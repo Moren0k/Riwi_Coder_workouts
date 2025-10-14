@@ -38,7 +38,13 @@ dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
 
 ## Comandos útiles
 
-- Crear una migración inicial:
+- Compila el código, Si hay errores, los muestra en consola:
+
+```bash
+dotnet build
+```
+
+- Crear una migración:
 
 ```bash
 dotnet ef migrations add InitialCreate
@@ -60,3 +66,7 @@ dotnet ef migrations add InitialCreate
 
 - Los paquetes deben instalarse en el proyecto `.csproj`.
 - Se recomienda usar exactamente las versiones indicadas para evitar conflictos de compatibilidad.
+
+*Nota: Asegúrate de tener instalado .NET 6.0 SDK y Entity Framework Core en tu entorno de desarrollo.*
+
+---

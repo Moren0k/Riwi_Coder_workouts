@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj": {}
+    "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj": {}
   },
   "projects": {
-    "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj": {
+    "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj",
+        "projectUniqueName": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj",
         "projectName": "PruebaRutaAvanzada",
-        "projectPath": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj",
-        "packagesPath": "/home/kevin-moreno/.nuget/packages/",
-        "outputPath": "/home/kevin-moreno/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/obj/",
+        "projectPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/PruebaRutaAvanzada.csproj",
+        "packagesPath": "/home/kevinmorenocsharp/.nuget/packages/",
+        "outputPath": "/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kevin-moreno/.nuget/NuGet/NuGet.Config"
+          "/home/kevinmorenocsharp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
