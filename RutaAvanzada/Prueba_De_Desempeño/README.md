@@ -3,10 +3,12 @@
 ## Descripción del problema
 
 El Hospital San Vicente actualmente gestiona sus citas médicas en agendas físicas y hojas de cálculo. Este método ha generado múltiples problemas:
+
     • Duplicidad de citas para el mismo médico o paciente.
     • Dificultad para encontrar la información de un paciente.
     • Falta de control sobre médicos y sus especialidades.
     • Pérdida de información cuando las agendas se dañan o extravían.
+
 La gerencia del hospital decidió desarrollar un sistema interno en c# que permita organizar de forma eficiente las citas médicas, pacientes y médicos.
 
 ## Objetivo general
