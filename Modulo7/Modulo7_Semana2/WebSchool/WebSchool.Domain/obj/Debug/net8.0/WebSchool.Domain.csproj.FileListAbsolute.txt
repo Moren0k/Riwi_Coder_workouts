@@ -1,0 +1,12 @@
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/bin/Debug/net8.0/WebSchool.Domain.deps.json
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/bin/Debug/net8.0/WebSchool.Domain.dll
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/bin/Debug/net8.0/WebSchool.Domain.pdb
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.AssemblyInfoInputs.cache
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.AssemblyInfo.cs
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.csproj.CoreCompileInputs.cache
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.sourcelink.json
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.dll
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/refint/WebSchool.Domain.dll
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/WebSchool.Domain.pdb
+/home/kevincsharp/Documentos/Riwi_Coder_workouts/Modulo7/Modulo7_Semana2/WebSchool/WebSchool.Domain/obj/Debug/net8.0/ref/WebSchool.Domain.dll

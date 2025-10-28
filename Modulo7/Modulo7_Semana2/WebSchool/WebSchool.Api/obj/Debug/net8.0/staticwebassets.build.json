@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "b7Du8lVGsld5W9q9KkrnwxVtwQBX95FPkuFRAQWc9QA=",
+  "Source": "WebSchool.Api",
+  "BasePath": "_content/WebSchool.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
