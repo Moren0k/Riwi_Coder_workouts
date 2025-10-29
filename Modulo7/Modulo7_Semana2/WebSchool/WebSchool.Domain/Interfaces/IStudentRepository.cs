@@ -8,5 +8,5 @@ public interface IStudentRepository
     Task<Student?> GetByIdAsync(int id); // GetById
     Task AddAsync(Student student); // Add
     Task UpdateAsync(Student student); // Update
-    Task DeleteAsync(int id); // Delete
+    Task DeleteAsync(Student student); // Delete
 }

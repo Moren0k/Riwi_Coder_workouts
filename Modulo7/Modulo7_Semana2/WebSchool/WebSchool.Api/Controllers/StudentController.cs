@@ -9,41 +9,45 @@ namespace WebSchool.Api.Controllers;
 public class StudentController : ControllerBase
 {
     private readonly IStudentService _studentService;
+
     public StudentController(IStudentService studentService)
     {
-        _studentService = studentService;
+        _studentService = studentService; // IStudentService
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Student>> GetAllStudentsAsync()
+    public async Task<IEnumerable<Student>> GetAllStudentsAsync() // Get All Students
     {
-        return await _studentService.GetAllStudentsAsync();
+        var students = await _studentService.GetAllStudentsAsync();
+        return students;
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Student>> GetStudentByIdAsync(int id)
+    public async Task<ActionResult> GetStudentByIdAsync(int id) // Get Student By ID
     {
-        return (await _studentService.GetStudentByIdAsync(id))!;
+        var student = await _studentService.GetStudentByIdAsync(id);
+        if (student == null) return NotFound();
+        return Ok(student);
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateStudent([FromBody] Student student)
+    public async Task<IActionResult> AddStudentAsync(Student student) // Add Student
     {
         await _studentService.AddStudentAsync(student);
-        return CreatedAtAction(nameof(GetStudentByIdAsync), new { id = student.Id }, student);
+        return Ok($"Entity {student.Name} has been added with ID {student.Id}");
     }
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> UpdateStudentAsync([FromBody] Student student)
+    public async Task<IActionResult> UpdateStudentAsync(int id, Student student) // Update Student
     {
-        await _studentService.UpdateStudentAsync(student);
-        return Ok();
+        await _studentService.UpdateStudentAsync(id, student);
+        return Ok($"Entity {id} has been updated");
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteStudentAsync([FromBody] int id)
+    public async Task<IActionResult> DeleteStudentAsync(int id) // Delete Student
     {
         await _studentService.DeleteStudentAsync(id);
-        return Ok();
+        return Ok($"Entity {id} has been deleted");
     }
 }

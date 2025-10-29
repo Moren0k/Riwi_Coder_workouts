@@ -1,4 +1,3 @@
-using System.Data;
 using WebSchool.Application.Interfaces;
 using WebSchool.Domain.Entities;
 using WebSchool.Domain.Interfaces;
@@ -8,41 +7,45 @@ namespace WebSchool.Application.Services;
 public class StudentService : IStudentService
 {
     private readonly IStudentRepository _studentRepository;
+
     public StudentService(IStudentRepository studentRepository)
     {
-        _studentRepository = studentRepository;
-    }
-    
-    public async Task<IEnumerable<Student>> GetAllStudentsAsync()
-    {
-        var students = await _studentRepository.GetAllAsync();
-        return students;
+        _studentRepository = studentRepository; // IStudentRepository
     }
 
-    public async Task<Student?> GetStudentByIdAsync(int id)
+    public async Task<IEnumerable<Student>> GetAllStudentsAsync() // GetAllStudent
     {
-        var student = await _studentRepository.GetByIdAsync(id);
-        return student;
+        return await _studentRepository.GetAllAsync();
     }
 
-    public async Task AddStudentAsync(Student student)
+    public async Task<Student?> GetStudentByIdAsync(int id) // GetByIdStudent
     {
-        var checkStudent = await _studentRepository.GetByIdAsync(student.Id);
-        if (checkStudent != null) throw new Exception("Student already exists");
+        var studentEntity = await _studentRepository.GetByIdAsync(id);
+        if (studentEntity == null) throw new Exception("Student not found");
+        return studentEntity;
+    }
+
+    public async Task AddStudentAsync(Student student) // AddStudent
+    {
+        var studentEntity = await _studentRepository.GetByIdAsync(student.Id);
+        if (studentEntity != null) throw new Exception("Student already exists");
         await _studentRepository.AddAsync(student);
     }
 
-    public async Task UpdateStudentAsync(Student student)
+    public async Task UpdateStudentAsync(int id, Student student) // UpdateStudent
     {
-        var checkStudent = await _studentRepository.GetByIdAsync(student.Id);
-        if (checkStudent == null) throw new Exception("Student not found");
-        await _studentRepository.UpdateAsync(student);
+        var studentEntity = await _studentRepository.GetByIdAsync(id);
+        if (studentEntity == null) throw new Exception("Student not found");
+        studentEntity.Name = student.Name;
+        studentEntity.LastName = student.LastName;
+        studentEntity.Dni = student.Dni;
+        await _studentRepository.UpdateAsync(studentEntity);
     }
 
-    public async Task DeleteStudentAsync(int id)
+    public async Task DeleteStudentAsync(int id) // DeleteStudent
     {
-        var checkStudent = await _studentRepository.GetByIdAsync(id);
-        if (checkStudent == null) throw new Exception("Student not found");
-        await _studentRepository.DeleteAsync(id);
+        var studentEntity = await _studentRepository.GetByIdAsync(id);
+        if (studentEntity == null) throw new Exception("Student not found");
+        await _studentRepository.DeleteAsync(studentEntity);
     }
 }
