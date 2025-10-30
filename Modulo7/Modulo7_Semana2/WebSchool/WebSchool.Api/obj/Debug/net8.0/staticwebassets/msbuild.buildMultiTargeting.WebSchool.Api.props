@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/WebSchool.Api.props" />
-</Project>
