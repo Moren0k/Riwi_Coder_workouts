@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PruebaRutaAvanzada
+build_property.RootNamespace = PruebaRutaAvanzada
+build_property.ProjectDir = /home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Appointment/DetailsAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwb2ludG1lbnQvRGV0YWlsc0FwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Appointment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwb2ludG1lbnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Doctor/DetailsDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdG9yL0RldGFpbHNEb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Doctor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdG9yL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Email/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWwvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Patient/DetailsPatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGF0aWVudC9EZXRhaWxzUGF0aWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Patient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGF0aWVudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/kevinmorenocsharp/Documentos/Riwi_Coder_workouts/RutaAvanzada/Prueba_De_Desempeño/PruebaRutaAvanzada/PruebaRutaAvanzada/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zffrqsc4eb

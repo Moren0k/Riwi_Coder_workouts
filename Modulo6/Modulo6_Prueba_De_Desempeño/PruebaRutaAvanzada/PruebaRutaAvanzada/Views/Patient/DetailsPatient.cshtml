@@ -1,0 +1,115 @@
+@model PruebaRutaAvanzada.Models.Patient
+<hr>
+<div class="container mt-4">
+    <a type="button" class="btn btn-light m-3" asp-action="Index" asp-controller="Patient"> Volver </a>
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white text-center fw-bold">
+                    Editar Paciente
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" asp-controller="Patient">
+                        <input type="hidden" asp-for="Id"/>
+
+                        <div class="form-group mb-3">
+                            <label>Nombre</label>
+                            <input asp-for="FirstName" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Apellido</label>
+                            <input asp-for="LastName" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Segundo Apellido</label>
+                            <input asp-for="SecondLastName" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Documento</label>
+                            <input asp-for="Document" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Teléfono</label>
+                            <input asp-for="Phone" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Correo Electrónico</label>
+                            <input asp-for="Email" class="form-control"/>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Edad</label>
+                            <input asp-for="Age" class="form-control"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Guardar Cambios
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel derecho: Información detallada del paciente -->
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center fw-bold">
+                    Información del Paciente
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Nombre</h6>
+                                <p class="fw-semibold">@Model.FirstName</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Apellido</h6>
+                                <p class="fw-semibold">@Model.LastName</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Segundo Apellido</h6>
+                                <p class="fw-semibold">@Model.SecondLastName</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Documento</h6>
+                                <p class="fw-semibold">@Model.Document</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Teléfono</h6>
+                                <p class="fw-semibold">@Model.Phone</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light">
+                                <h6 class="text-muted">Correo Electrónico</h6>
+                                <p class="fw-semibold">@Model.Email</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="p-3 border rounded bg-light text-center">
+                                <h6 class="text-muted">Edad</h6>
+                                <p class="fw-semibold fs-5">@Model.Age años</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

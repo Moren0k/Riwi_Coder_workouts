@@ -1,0 +1,11 @@
+﻿services:
+  system.api:
+    container_name: system-api
+    build:
+      context: .
+      dockerfile: System.Api/Dockerfile
+    image: system.api
+    ports:
+      - "5046:80"
+    env_file:
+      - .env

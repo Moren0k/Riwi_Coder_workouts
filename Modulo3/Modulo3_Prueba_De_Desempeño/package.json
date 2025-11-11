@@ -1,0 +1,28 @@
+{
+  "name": "jhoskevinagudelomoreno277",
+  "version": "1.0.0",
+  "description": "SPA Gestión de Eventos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xDavidGamerx/SPA-Gesti-n-de-Eventos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/xDavidGamerx/SPA-Gesti-n-de-Eventos/issues"
+  },
+  "homepage": "https://github.com/xDavidGamerx/SPA-Gesti-n-de-Eventos#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "vite": "^7.0.4"
+  }
+}

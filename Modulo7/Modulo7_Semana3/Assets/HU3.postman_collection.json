@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "c663fbaf-e6cd-47aa-afca-611a138fc6ee",
+		"name": "HU3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47359911"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"string\",\n  \"email\": \"user@example.com\",\n  \"password\": \"string\",\n  \"role\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5046/api/User/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5046/api/User/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/User/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"string\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"role\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5046/api/User/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/User/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/User/by-username/{username}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"User",
+								"by-username",
+								"{username}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 0,\n  \"stock\": 2147483647\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5046/api/Products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"Products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/Products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"Products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/Products/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"Products",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 0,\n  \"stock\": 2147483647\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5046/api/Products/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"Products",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5046/api/Products/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5046",
+							"path": [
+								"api",
+								"Products",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

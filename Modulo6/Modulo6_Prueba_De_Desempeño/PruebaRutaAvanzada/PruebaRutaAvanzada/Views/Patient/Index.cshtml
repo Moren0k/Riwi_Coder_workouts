@@ -1,0 +1,111 @@
+@model PruebaRutaAvanzada.Models.ViewModel
+<hr>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center mb-4 fw-bold text-primary">Administrador de Pacientes</h2>
+
+        <!-- Panel izquierdo: Formulario -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white text-center fw-semibold">
+                    Crear Paciente
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Patient">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="FirstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" class="form-control" name="LastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Segundo Apellido</label>
+                            <input type="text" class="form-control" name="SecondLastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Documento</label>
+                            <input type="text" class="form-control" name="Document" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" name="Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" name="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edad</label>
+                            <input type="number" class="form-control" name="Age" required>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success fw-semibold">
+                                Guardar Paciente
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel derecho: Tabla de pacientes -->
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center fw-semibold">
+                    Lista de Pacientes Registrados
+                </div>
+                <div class="card-body">
+                    @if (Model.Patients.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Documento</th>
+                                        <th class="text-center">Detalles</th>
+                                        <th class="text-center">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var patient in Model.Patients)
+                                    {
+                                        <tr>
+                                            <td>@patient.FirstName @patient.LastName @patient.SecondLastName</td>
+                                            <td>@patient.Document</td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-primary btn-sm"
+                                                   asp-action="DetailsPatient"
+                                                   asp-controller="Patient"
+                                                   asp-route-id="@patient.Id">
+                                                    <i class="bi bi-eye"></i> Ver
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-danger btn-sm"
+                                                   asp-action="Delete"
+                                                   asp-controller="Patient"
+                                                   asp-route-id="@patient.Id">
+                                                    <i class="bi bi-trash"></i> Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center text-danger fw-semibold mt-3">
+                            ¡No hay pacientes registrados!
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+@model PruebaRutaAvanzada.Models.ViewModel
+<hr>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center mb-4 fw-bold text-primary">Administrador de Doctores</h2>
+
+        <!-- Panel izquierdo: Formulario de creación -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white text-center fw-semibold">
+                    Crear Doctor
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Doctor">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="FirstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" class="form-control" name="LastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Segundo Apellido</label>
+                            <input type="text" class="form-control" name="SecondLastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Documento</label>
+                            <input type="text" class="form-control" name="Document" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" name="Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" name="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Especialidad</label>
+                            <input type="text" class="form-control" name="Specialty" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edad</label>
+                            <input type="number" class="form-control" name="Age" required>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success fw-semibold">
+                                Guardar Doctor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel derecho: Tabla de doctores -->
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center fw-semibold">
+                    Lista de Doctores Registrados
+                </div>
+                <div class="card-body">
+                    @if (Model.Doctors.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Documento</th>
+                                        <th>Especialidad</th>
+                                        <th class="text-center">Detalles</th>
+                                        <th class="text-center">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var doctor in Model.Doctors)
+                                    {
+                                        <tr>
+                                            <td>@doctor.FirstName @doctor.LastName @doctor.SecondLastName</td>
+                                            <td>@doctor.Document</td>
+                                            <td>@doctor.Specialty</td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-primary btn-sm"
+                                                   asp-action="DetailsDoctor"
+                                                   asp-controller="Doctor"
+                                                   asp-route-id="@doctor.Id">
+                                                    <i class="bi bi-eye"></i> Ver
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-outline-danger btn-sm"
+                                                   asp-action="Delete"
+                                                   asp-controller="Doctor"
+                                                   asp-route-id="@doctor.Id">
+                                                    <i class="bi bi-trash"></i> Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center text-danger fw-semibold mt-3">
+                            ¡No hay doctores registrados!
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

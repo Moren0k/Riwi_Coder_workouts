@@ -1,0 +1,47 @@
+# Build and compilation
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio
+.vs/
+.vscode/settings.json
+*.user
+*.suo
+*.sln.docstates
+.vscode/*.log
+
+# Environment variables
+.env
+
+# Rider/IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+*.log
+*.cache
+
+# Runtime and temporary files
+appsettings.*.local.json
+launchSettings.json
+
+# Published files
+publish/
+PublishProfiles/
+
+# NuGet
+.nuget/
+*.nupkg
+*.snupkg
+
+# User-specific files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache
+node_modules/

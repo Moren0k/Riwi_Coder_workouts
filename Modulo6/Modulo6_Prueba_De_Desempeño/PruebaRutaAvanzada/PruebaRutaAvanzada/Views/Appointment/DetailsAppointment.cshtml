@@ -1,0 +1,121 @@
+@model PruebaRutaAvanzada.Models.ViewModel
+
+@{
+    var appointment = Model.Appointments.FirstOrDefault();
+    var patients = Model.Patients;
+    var doctors = Model.Doctors;
+}
+
+@if (appointment == null)
+{
+    <div class="alert alert-warning mt-4">Cita no encontrada.</div>
+}
+else
+{
+    <div class="container mt-5">
+        <a type="button" class="btn btn-light m-3" asp-action="Index" asp-controller="Patient"> Volver </a>
+        <div class="row">
+
+            <!-- Panel izquierdo: Formulario de edición -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-success text-white text-center fw-bold">
+                        Editar Cita
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Edit" method="post">
+                            <input type="hidden" name="Id" value="@appointment.Id"/>
+
+                            <div class="form-group mb-3">
+                                <label class="fw-semibold">Paciente</label>
+                                <select class="form-select" name="PatientId">
+                                    @foreach (var p in patients)
+                                    {
+                                        <option value="@p.Id">@p.FirstName</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="fw-semibold">Doctor</label>
+                                <select class="form-select" name="DoctorId">
+                                    @foreach (var d in doctors)
+                                    {
+                                        <option value="@d.Id">@d.FirstName</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="fw-semibold">Fecha</label>
+                                <input type="datetime-local" class="form-control" name="Date" value="@appointment.Date.ToString("yyyy-MM-ddTHH:mm")"/>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="fw-semibold">Motivo</label>
+                                <textarea class="form-control" name="Reason" rows="3">@appointment.Reason</textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="fw-semibold">Estado</label>
+                                <select class="form-select" name="Status" required>
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="Completada">Completada</option>
+                                    <option value="Cancelada">Cancelada</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 mb-2">Guardar Cambios</button>
+                            <a asp-action="Delete" asp-route-id="@appointment.Id" class="btn btn-danger w-100 mb-2">Eliminar</a>
+                            <a asp-action="Completed" asp-route-id="@appointment.Id" class="btn btn-primary w-100">Completar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel derecho: Información detallada de la cita -->
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white text-center fw-bold">
+                        Información de la Cita
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded bg-light">
+                                    <h6 class="text-muted">Paciente</h6>
+                                    <p class="fw-semibold">@appointment.Patient?.FirstName</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded bg-light">
+                                    <h6 class="text-muted">Doctor</h6>
+                                    <p class="fw-semibold">@appointment.Doctor?.FirstName</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded bg-light">
+                                    <h6 class="text-muted">Fecha</h6>
+                                    <p class="fw-semibold">@appointment.Date.ToString("dd/MM/yyyy HH:mm")</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded bg-light">
+                                    <h6 class="text-muted">Estado</h6>
+                                    <p class="fw-semibold">@appointment.Status</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="p-3 border rounded bg-light">
+                                    <h6 class="text-muted">Motivo</h6>
+                                    <p class="fw-semibold">@appointment.Reason</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

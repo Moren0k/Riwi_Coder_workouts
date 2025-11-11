@@ -1,0 +1,85 @@
+/*Minificación del CSS con minifier.org*/
+:root{--color:#f4f4f4;--secunday-color:#333}body{font-family:Arial,sans-serif;margin:0;padding:0;box-sizing:border-box}header,footer{background-color:var(--secunday-color);color:var(--color);display:flex;justify-content:space-around;padding:10px 20px;text-align:center}nav ul{display:flex;list-style:none;padding:0}nav li{margin:0 15px}nav a{color:var(--color);text-decoration:none}main{padding:20px}.grid-container{display:grid;justify-content:space-between;grid-template-columns:repeat(3,1fr);gap:20px}.grid-item{background-color:var(--secunday-color);color:var(--color);padding:20px;border:1px solid #ccc;text-align:center;flex:1}@media (max-width:768px){.grid-container{grid-template-columns:repeat(2,1fr)}nav ul{flex-direction:column}}@media (max-width:480px){.grid-container{grid-template-columns:1fr;flex-direction:column}header,nav ul{flex-direction:column}}
+
+/* Before minificacion
+:root {
+    --color: #f4f4f4;
+    --secunday-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: var(--secunday-color);
+    color: var(--color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+}
+
+nav li {
+    margin: 0 15px;
+    
+}
+
+nav a {
+    color: var(--color);
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: var(--secunday-color);
+    color: var(--color);
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+
+    header, nav ul {
+        flex-direction: column;
+    }
+
+}
+*/

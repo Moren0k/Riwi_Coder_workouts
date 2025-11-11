@@ -1,0 +1,6 @@
+namespace System.Application.Interfaces;
+
+public interface IAuthService
+{
+    Task<string?> Authenticate(string email, string password);
+}

@@ -1,0 +1,117 @@
+/*2. Selectors with specificity*/
+div {
+    color: black;
+}
+
+.box_highlight {
+    color: red !important;
+}
+
+#special {
+    color: green ;
+}
+
+/*3. Fondo, Bordes y Sombras*/
+body {
+    background-color: #CCDBDC;
+}
+
+.box,h1 {
+    color: white;
+    background-color: #071013;
+    border: 2px solid #ff0000;
+    box-shadow: 5px 5px 10px #A30015;
+    padding: 20px;
+    margin: 10px;
+}
+
+.content {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border-color: red blue green black;
+    border-width: 1px 5px 10px 15px;
+    border-style: solid dashed double dotted;
+}
+
+/*5. Display y Position*/
+.inline-block {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 80px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 100%;
+    box-shadow: 5px 10px #A30015;
+
+}
+
+.fixed-box {
+    position: fixed;
+    top: 110px;
+    right: 15px;
+    background-color: red;
+    padding: 10px;
+    border: 2px solid #A30015;
+    box-shadow: 5px 5px 10px #000000;
+
+}
+
+/* Transformaciones, pseudoclases*/
+.rotate-box {
+    width: max-content;
+    height: auto;
+    padding: 20px;
+    border: 5px double black;
+    box-shadow: 50px 50px 100px #ff0707;
+    transform: rotate(45deg);
+    position: fixed;
+    right: 30%;
+    top: 150px;
+}
+
+.rotate-box:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/*Animaciones*/
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+div.inline-block:hover {
+    animation: fade 2s ease-in-out;
+}
+
+#visual {
+    background-color: #A30015;
+    border: 5px solid #000000;
+    padding: 10px;
+    box-shadow: 20px 50px 50px rgb(68, 0, 255);
+}
+
+.by p {
+    background-color: #071013;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px;
+    text-shadow: 5px 5px 5px #CCDBDC;
+}
+
+/*Grid*/
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 5px solid black;
+}
+
+.list div:hover {
+    border: 1px solid red;
+    transform: rotate(5deg);
+}

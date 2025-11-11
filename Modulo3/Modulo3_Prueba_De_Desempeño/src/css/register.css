@@ -1,0 +1,73 @@
+:root {
+    --primary-color: #EFE1F2; /* lavanda */
+    --secondary-color: #6A00FE; /* morado */
+    --background-color: #ffffff; /* blanco */
+    --background-secondary-color: #F0F0F0; /* gris claro */
+}
+
+body {
+    background-color: var(--background-secondary-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.login h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.login form {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 1rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        font-size: .9rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    input:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+    }
+
+    button {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border: none;
+    margin: 20px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+}
+

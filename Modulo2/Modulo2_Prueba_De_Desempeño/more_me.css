@@ -1,0 +1,48 @@
+:root {
+    --background-color: #F4F2F3;
+    --background-secundary:#000000;
+    --color-red: #f03b30;
+}
+
+.more {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid var(--color-red);
+    box-shadow: 1px 2px 3px var(--color-red);
+
+    .title_skill {
+        font-weight: bold;
+    }
+
+    .study {
+        text-align: center;
+        border: 1px solid var(--background-secundary);
+    }
+
+    .languages img:hover{
+        transform: scale(1.5);
+    }
+
+    .languages {
+        text-align: center;
+    }
+
+    .languages img {
+        width: 15%;
+        height: auto;
+        transition: transform 0.5s ease;
+
+    }
+
+    #py {
+        width: 9%;
+    }
+
+    .skill {
+        transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+        transform: scale(1.01);
+    }
+}
