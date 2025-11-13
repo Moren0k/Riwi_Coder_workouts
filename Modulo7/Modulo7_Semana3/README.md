@@ -1,169 +1,214 @@
-# System - API REST en .NET (Catálogo de Productos)
+# 🌐 WebApi HU3 – Sistema de Gestión de Usuarios y Estudiantes
 
-Este repositorio contiene una API REST construida con **.NET 9** siguiendo una arquitectura en capas: **API**, **Application**, **Domain** e **Infrastructure**. El proyecto implementa gestión de usuarios, productos, autenticación JWT, documentación Swagger y dockerización.
+## 📘 Descripción General
 
----
+**WebApi HU3** es una aplicación desarrollada en **ASP.NET Core** que implementa una arquitectura por capas (Domain, Application, Infrastructure y API).  
+El sistema permite la **gestión de usuarios y estudiantes**, con autenticación mediante **JSON Web Tokens (JWT)** para proteger los endpoints.  
+Está diseñado con fines **académicos y profesionales**, siguiendo buenas prácticas de programación y patrones de diseño.
 
-## 1. Objetivo
-
-Desarrollar un **Catálogo de Productos** con funcionalidades:
-
-* CRUD de **Usuarios** (roles: Admin, User, Guest).
-* CRUD de **Productos**.
-* Registro y login mediante **JWT**.
-* Documentación automática con **Swagger**.
-* Contenerización con **Docker** (API + MySQL).
+### 🎯 Objetivos del Sistema
+- Gestionar usuarios (registro, autenticación, roles).
+- Administrar estudiantes (creación, actualización, eliminación y consulta).
+- Proteger las operaciones mediante autenticación JWT.
+- Implementar un entorno modular y escalable.
 
 ---
 
-## 2. Estructura de proyectos
+## 🏗️ Arquitectura del Proyecto
 
-La solución contiene cuatro proyectos:
+El proyecto sigue una **arquitectura limpia (Clean Architecture)**, separando las responsabilidades en distintas capas:
 
-| Proyecto                      | Responsabilidad                                                                               |
-| ----------------------------- | --------------------------------------------------------------------------------------------- |
-| `webProductos.Api`            | Controladores, configuración JWT y Swagger, entry point `Program.cs`.                         |
-| `webProductos.Application`    | DTOs, interfaces de servicios, implementación de la lógica de negocio.                        |
-| `webProductos.Domain`         | Entidades (`User`, `Product`), enumeraciones (`Role`) y contratos de repositorio.             |
-| `webProductos.Infrastructure` | Implementación de repositorios, `AppDbContext`, migraciones EF Core y configuración de MySQL. |
+```
+WebApi-HU3-develop/
+│
+├── WebApi-HU3.Api/ → Capa de presentación (controladores, configuración de JWT, endpoints)
+├── WebApi-HU3.Application/ → Lógica de negocio (servicios, DTOs, validaciones)
+├── WebApi-HU3.Domain/ → Entidades principales e interfaces de repositorio
+├── WebApi-HU3.Infraestructure/ → Acceso a datos, contexto EF Core, repositorios
+└── Assets/ → Diagramas y documentación (Casos de uso, ERD, JWT, etc.)
+```
 
-**Dependencias entre capas:**
-
-* `Api` → consume interfaces de `Application`.
-* `Application` → depende de `Domain` (entidades e interfaces) y de `Infrastructure` en tiempo de ejecución.
-* `Infrastructure` → implementa interfaces de `Domain` y persiste entidades con `AppDbContext`.
-
-![Diagrama de capas](./Assets/Images/Reference.png)
+Cada capa comunica solo lo necesario con la siguiente, asegurando bajo acoplamiento y alta cohesión.
 
 ---
 
-## 3. Endpoints principales
+## 🛠️ Tecnologías Utilizadas
 
-### Usuarios (`UserController`)
-
-| Método | Ruta                 | Descripción               | Autorización |
-| ------ | -------------------- | ------------------------- | ------------ |
-| POST   | `/api/auth/register` | Registrar usuario         | Público      |
-| POST   | `/api/auth/login`    | Login → JWT               | Público      |
-| GET    | `/api/users`         | Listar todos los usuarios | Admin        |
-| GET    | `/api/users/{id}`    | Obtener usuario por id    | Autenticado  |
-| PUT    | `/api/users/{id}`    | Actualizar usuario        | Autenticado  |
-| DELETE | `/api/users/{id}`    | Eliminar usuario          | Admin        |
-
-### Productos (`ProductsController`)
-
-| Método | Ruta                 | Descripción             | Autorización |
-| ------ | -------------------- | ----------------------- | ------------ |
-| POST   | `/api/products`      | Crear producto          | Autenticado  |
-| GET    | `/api/products`      | Listar productos        | Autenticado  |
-| GET    | `/api/products/{id}` | Obtener producto por id | Autenticado  |
-| PUT    | `/api/products/{id}` | Actualizar producto     | Autenticado  |
-| DELETE | `/api/products/{id}` | Eliminar producto       | Admin        |
-
-> Todas las rutas protegidas requieren token JWT válido.
+- **.NET 8 / ASP.NET Core Web API**
+- **Entity Framework Core** (acceso a datos y migraciones)
+- **JWT (JSON Web Token)** para autenticación
+- **C# 12**
+- **SQL Server** (base de datos)
+- **Visual Studio / Rider / VS Code**
+- **Swagger** para documentación de endpoints
 
 ---
 
-## 4. JWT y seguridad
+## ⚙️ Configuración y Ejecución
 
-* Tokens generados con `AuthService` usando clave simétrica (`appsettings.json`).
-* Claims principales: `sub` (username), `role` (rol del usuario), `jti`.
-* Control de acceso en rutas mediante `[Authorize]` y `[Authorize(Roles = "Admin")]`.
-* Buenas prácticas: almacenar la clave JWT en secretos seguros para producción.
+### 🔹 Requisitos Previos
+- .NET SDK 8.0 o superior
+- SQL Server o base de datos compatible
+- Herramienta de desarrollo: Rider, Visual Studio o VS Code
 
----
+### 🔹 Pasos de Instalación
 
-## 5. Base de datos
-
-* MySQL (ej. Aiven Cloud) usando **Pomelo EF Core**.
-* `AppDbContext` con `DbSet<User>` y `DbSet<Product>`.
-* Migraciones EF Core configuradas y aplicables con:
+1. **Clonar el repositorio:**
+```bash
+   git clone https://github.com/tuusuario/WebApi-HU3.git
+   cd WebApi-HU3-develop
+```
+2. **Configurar la cadena de conexión** en el archivo:
 
 ```bash
-dotnet ef migrations add InitialCreate -p webProductos.Infrastructure -s webProductos.Api
-dotnet ef database update -p webProductos.Infrastructure -s webProductos.Api
+WebApi-HU3.Api/appsettings.json
 ```
 
----
-
-## 6. Dockerización
-
-* `Dockerfile` en `webProductos.Api` para publicar la API.
-* `docker-compose.yml` opcional con:
-
-```yaml
-services:
-  api:
-    build: ./webProductos.Api
-    ports:
-      - "8080:8080"
-    environment:
-      - ConnectionStrings__DefaultConnection=<tu_connection_string>
-      - Jwt__Key=<tu_clave_jwt>
-  mysql:
-    image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: defaultdb
-```
-
-> Adminer opcional para gestión visual de la DB.
-
----
-
-## 7. Pruebas unitarias
-
-* Se incluyen pruebas básicas en la capa `Application`:
-
-    * Validación de creación de producto.
-    * Verificación de login de usuario.
-
----
-
-## 8. Despliegue
-
-* API lista para desplegar en **Render**, **Railway** o **Azure**.
-* Recomiendo inyectar **secrets** (JWT y ConnectionStrings) desde entorno de despliegue.
-* Para desarrollo local, usar `docker-compose up --build`.
-
----
-
-## 9. Diagrama de arquitectura (simplificado)
+3. Aplicar migraciones y crear la base de datos:
 
 ```bash
-API (Controladores)
-   │
-   ▼
-Application (Servicios / DTOs / Interfaces)
-   │
-   ▼
-Domain (Entidades / Interfaces)
-   │
-   ▼
-Infrastructure (Repositorios / DbContext)
+cd WebApi-HU3.Infraestructure
+dotnet ef database update
+```
+
+4. Ejecutar el proyecto:
+
+```bash
+cd ../WebApi-HU3.Api
+dotnet run
+```
+
+5. Abrir en el navegador:
+
+```bash
+https://students-web-fb5f86739d1b.herokuapp.com/index.html
+```
+
+🔐 Autenticación JWT
+
+El sistema utiliza JWT Bearer Tokens para autenticar y autorizar usuarios.
+🔸 Flujo Básico:
+
+1. El usuario se registra o inicia sesión mediante /api/Auth/login.
+
+2. El servidor genera un token JWT firmado.
+
+3. El cliente incluye el token en el encabezado de cada petición:
+
+```bash
+    Authorization: Bearer {token}
 ```
 
 ---
 
-## Diagramas UML
+## 🧾 Endpoints Principales
 
-### Diagrama de clases
-
-![Diagrama de clases](./Assets/Images/ClassDiagram.png)
-
-### Diagrama casos de uso
-
-![Diagrama Casos de uso](./Assets/Images/UseCases.png)
-
-## 11. Tecnologías usadas
-
-* .NET 9
-* ASP.NET Core Web API
-* Entity Framework Core con Pomelo para MySQL
-* JWT para autenticación
-* Swagger para documentación automática
-* Docker para contenerización
+Los ficheros fuente están en:
+`WebApi-HU3-develop/WebApi-HU3.Api/Controllers/`
 
 ---
 
-![Architectura](./Assets/Images/Arquitectura.png)
+## 🧩 **AuthController**
+**Ruta base:** `/api/Auth`
+
+### `POST /api/Auth/Login`
+**Propósito:** autenticar y devolver `AuthResponseDto` con Token + User.  
+**Autorización:** público (no requiere token).
+
+---
+
+### `POST /api/Auth/Register`
+**Propósito:** crear un nuevo usuario (acepta `UserRegisterDto` con `Username`, `Email`, `Password`, `Role`).  
+**Autorización:** público (no requiere token).
+
+> 📝 **Nota:** Actualmente el cliente puede indicar `Role` en el body (ver DTO `UserRegisterDto.Role`).
+
+---
+
+## 👤 **UserController**
+**Ruta base:** `/api/User`
+
+### `GET /api/User`
+**Propósito:** listar todos los usuarios.  
+**Autorización:** `[Authorize(Roles = "Admin")]` → solo **Admin**.
+
+---
+
+### `GET /api/User/{id}`
+**Propósito:** obtener un usuario por ID.  
+**Autorización:** `[Authorize]` → cualquier usuario autenticado (**Admin** o **User**).
+
+---
+
+### `PUT /api/User/{id}`
+**Propósito:** actualizar un usuario existente.  
+**Autorización:** `[Authorize(Roles = "Admin")]` → solo **Admin**.
+
+---
+
+### `DELETE /api/User/{id}`
+**Propósito:** eliminar un usuario.  
+**Autorización:** `[Authorize(Roles = "Admin")]` → solo **Admin**.
+
+📂 Estos atributos se encuentran en  
+`WebApi-HU3.Api/Controllers/UserController.cs`.
+
+---
+
+## 🎓 **StudentController**
+**Ruta base:** `/api/Student`
+
+| Método | Endpoint | Descripción | Autorización |
+|---------|-----------|-------------|---------------|
+| `GET` | `/api/Student` | Listar estudiantes. | Pública |
+| `GET` | `/api/Student/{id}` | Obtener estudiante por ID. | Pública |
+| `POST` | `/api/Student` | Crear un nuevo estudiante. | Pública |
+| `PUT` | `/api/Student/{id}` | Actualizar estudiante. | Pública |
+| `DELETE` | `/api/Student/{id}` | Eliminar estudiante. | Pública |
+
+> ⚠️ En el código actual **no hay ningún `[Authorize]`** en la clase ni en los métodos de `StudentController`,  
+> por tanto, **todos los endpoints son públicos** (no requieren token).
+
+---
+
+## 🧾 **Roles definidos en el dominio**
+
+**Archivo:**  
+`WebApi-HU3.Domain/Entities/UserRole.cs`
+
+```csharp
+public enum UserRole
+{
+    Admin,
+    User
+}
+```
+---
+
+## 🧩 Diagramas y Documentación
+
+### Diagrama Entidad-Relación (ER)
+
+![Diagrama ER](./Assets/Images/Entidad_Relacion.png)
+
+---
+
+### Diagrama de Clases
+
+![Diagrama de Clases](./Assets/Images/Clases.png)
+
+---
+
+## Casos de Uso
+
+![Casos de Uso](./Assets/Images/Casos_Uso.png)
+
+---
+
+## Secuencias
+
+### Generación de Token JWT
+
+![Generación de Token JWT](./Assets/Images/Login_JWT.png)
+
+---
